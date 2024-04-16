@@ -34,7 +34,7 @@ Open your web browser at http://localhost:3000.
 ## Run the analysis.
 Follow the steps below.
   1. Map your data in the "MAP DATA" tab.
-  2. If everything has worked well, in the "RUN ANALYSIS" tab, select the project "Variaciones en el consumo de antibióticos por ZBS (y CCAA)" and select the script "**cardio_report.qmd**"
+  2. If everything has worked well, in the "RUN ANALYSIS" tab, select the project **cardio_report.qmd**"
   3. Go to the "OUTPUTS" tab and download the results.
 
 
