@@ -1,0 +1,687 @@
+{
+    "created_dt": "20240416134256_cdmb",
+    "cdmb_version": "1.3.6",
+    "uuid": "fdbbe548-dbf0-465a-9b40-1ba0bdf5ecd7",
+    "metadata": {
+        "uuid": "ebca0607-9953-4d23-b2e7-845ffaf09528",
+        "project": "AtlasVPM Cardio: Cuidados Ambulatorios en Enfermedad Cardíaca",
+        "funder": "Proyecto financiado por la colaboración AtlasVPM mediante convenio con la Sociedad Española de Cardiología",
+        "url_project": "www.atlasvpm.org",
+        "work_package": "1",
+        "use_case": "atlasvpm_cardio",
+        "document": "Modelo común de datos",
+        "version_sem": "0.0.2",
+        "authors": [
+            {
+                "name": "Angulo-Pueyo, Ester",
+                "affiliation": "Instituto Aragonés de Ciencias de la Salud (IACS)",
+                "id": "0000-0001-7442-3450"
+            },
+            {
+                "name": "Martínez-Lizaga, Natalia",
+                "affiliation": "Instituto Aragonés de Ciencias de la Salud (IACS)",
+                "id": "0000-0002-9586-7955"
+            },
+            {
+                "name": "Bernal-Delgado, Enrique",
+                "affiliation": "Instituto Aragonés de Ciencias de la Salud (IACS)",
+                "id": "0000-0002-0961-3298"
+            }
+        ],
+        "keywords": [
+            "indicadores",
+            "atlasvpm",
+            "cardiología",
+            "atención primaria",
+            "variaciones en la práctica médica"
+        ],
+        "description": "Estudio de las variaciones a nivel de área sanitaria de la atención cardiológica en Atención Primaria. Este estudio tiene como objetivos específicos:\na)Definir operativamente un listado de indicadores que describan los cuidados (proceso), el tratamiento farmacéutico y los resultados intermedios de la atención a personas con enfermedades cardíacas crónicas, en concreto, cardiopatía isquémica, insuficiencia cardíaca congestiva y fibrilación auricular; b) Especificar el modelo de datos requerido para medir de forma sistemática y consistente estos indicadores a nivel de zona básica de salud, de conformidad con los datos de vida real disponibles en los sistemas de información de salud de las CCAA; c) Describir y cartografiar la variación geográfica de la atención al paciente cardíaco por zona básica de salud, analizando también las diferencias por sexo y por nivel socioeconómico; d) Presentar los resultados de monitorización de forma interactiva. \n",
+        "notes": "\n",
+        "spatial_coverage": "España",
+        "license": "CC BY 4.0 https://creativecommons.org/licenses/by/4.0/"
+    },
+    "cohort": {
+        "name": "enf_cardiovascular_cronica",
+        "description": "Adultos con tarjeta sanitaria activa a 31 de diciembre de 2021 con antecedentes diagnósticos de enfermedad cardiológica crónica, en concreto, enfermedad isquémica coronaria, insuficiencia cardíaca congestiva, o fibrilación auricular en las CCAA participantes en el periodo de estudio (2022) \n",
+        "inclusion_criteria": "Cualquier persona igual o mayor de 18 años con tarjeta sanitaria activa el 31 de diciembres del año de estudio que tenga episodio abierto en Atención Primaria de cualquiera de las enfermedades cardiológicas relevantes (i.e. enfermedad isquémica coronaria, insuficiencia cardiaca congestiva o fibrilación auricular), o que haya tenido una visita a urgencias hospitalarias o un ingreso hospitalario con diagnóstico principal de cualquiera de estas condiciones\n",
+        "exclusion_criteria": "Personas sin tarjeta sanitaria\nPersonas fallecidas durante el año de estudio\nPersonas que no tuvieron ningún contacto con los servicios sanitarios durante el año de estudio",
+        "beggining_study_period": "2022-01-01",
+        "end_study_period": "2022-12-31",
+        "cohort_definition_inclusion": {
+            "filename": "enfermedad_cd.csv",
+            "nature": "Condition",
+            "column_name": "code_clean"
+        },
+        "cohort_definition_exclusion": null
+    },
+    "entities": [
+        {
+            "uuid": "92d483bc-64b0-4f78-ade4-1f41e548bf50",
+            "name": "paciente",
+            "time_varying": false,
+            "variables": [
+                {
+                    "label": "paciente_id",
+                    "description": "pseudoidentificador del paciente",
+                    "standard_classification": "UTF-8",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "Aplicación de un algoritmo de pseudonimización (i.e., SHA-256)",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "enfermedad_cd",
+                    "description": "Enfermedad cardíaca crónica por la que el paciente es seleccionado en la cohorte (i.e. EIC, ICC, FA)",
+                    "standard_classification": "ciap-1, ciap-2, icd-9-mc-es, icd-10-mc-es",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": true,
+                    "transformations_from_origin": "{1 = 'Enfermedad isquémica cardíaca (EIC); 2 = 'Insuficiencia cardíaca congestiva (ICC)'; 3 = 'Fibrilación auricular (FA)'}",
+                    "possible_data_source": "Múltiples fuentes: EHR AP, PCH-URG, CMBD",
+                    "observations_comments": "Variable calculada a partir de la identificación de diagnósticos incluidos en el catálogo 'enfermedad_cd'",
+                    "examples": "",
+                    "catalog": {
+                        "column_name": "enfermedad_cd",
+                        "filename": "enfermedad_cd.csv"
+                    }
+                },
+                {
+                    "label": "zbs_residencia_cd",
+                    "description": "Zona básica de salud de residencia del paciente",
+                    "standard_classification": "Catálogo de Centros de Atención Primaria SNS (Ministerio de Sanidad)",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "Se requiere consistencia entre los códigos de ZBS de los datos de paciente y las poblaciones",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "La ZBS se captura en el momento de seleccionar el individuo para su inclusión en la cohorte",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "ccaa_cd",
+                    "description": "Comunidad autónoma de residencia del paciente",
+                    "standard_classification": "NUTS-2",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": true,
+                    "transformations_from_origin": "Mapear a código NUTS-2",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "",
+                    "examples": "ESXX",
+                    "catalog": {
+                        "column_name": "code_clean",
+                        "filename": "ccaa_cd.csv"
+                    }
+                },
+                {
+                    "label": "sexo_cd",
+                    "description": "sexo del paciente",
+                    "standard_classification": "ISO/IEC 5218",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "El sexo se captura en el momento de seleccionar el individuo para su inclusión en la cohorte",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "edad_nm",
+                    "description": "edad del paciente",
+                    "standard_classification": "",
+                    "format": "Integer",
+                    "type": "Numerical",
+                    "units": "años",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "Calcular a partir de la fecha de inclusión del individuo en la cohorte y su fecha de nacimiento",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "La edad se captura en el momento de seleccionar el individuo para su inclusión en la cohorte",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "nivel_copago_cd",
+                    "description": "Categorías del nivel de copago ",
+                    "standard_classification": "RDL16/2012 (BOE-A-2012-5403)",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "{0 = '<18.000€'; 1 = '>=18.000€' ; 2 = 'Desconocido'}",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "Calculada a partir de la TSI del paciente",
+                    "examples": "",
+                    "catalog": null
+                }
+            ],
+            "rules": [
+                {
+                    "expression": "edad_nm BETWEEN 18 AND 115",
+                    "name": "edad_nm",
+                    "description": "Rule for column edad_nm"
+                },
+                {
+                    "expression": "sexo_cd IN ('0', '1', '2', '9')",
+                    "name": "sexo_cd",
+                    "description": "Rule for column sexo_cd"
+                },
+                {
+                    "expression": "copago_cd IN ('0', '1', '2')",
+                    "name": "copago_cd",
+                    "description": "Rule for column copago_cd"
+                },
+                {
+                    "expression": "disease_cd IN ('1', '2', '3')",
+                    "name": "disease_cd",
+                    "description": "Rule for column disease_cd"
+                }
+            ]
+        },
+        {
+            "uuid": "7ca49a42-a07b-4900-ae8f-dfa6f438173b",
+            "name": "poblacion",
+            "time_varying": false,
+            "variables": [
+                {
+                    "label": "año_cd",
+                    "description": "Año en el que se especifica la población por ZBS",
+                    "standard_classification": "ISO 8601",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "YYYY",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "'2022'",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "El año será siempre 2022 dentro del alcance de este estudio",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "ccaa_cd",
+                    "description": "Comunidad autónoma a la que pertenece la zona básica de salud",
+                    "standard_classification": "NUTS-2",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": true,
+                    "transformations_from_origin": "",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "",
+                    "examples": "",
+                    "catalog": {
+                        "column_name": "code_clean",
+                        "filename": "ccaa_cd.csv"
+                    }
+                },
+                {
+                    "label": "zbs_residencia_cd",
+                    "description": "Zona básica de salud de residencia del paciente",
+                    "standard_classification": "Catálogo de Centros de Atención Primaria SNS (Ministerio de Sanidad)",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "Se requiere consistencia entre los códigos de ZBS de los datos de paciente y las poblaciones",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "La ZBS se captura en el momento de seleccionar el individuo para su inclusión en la cohorte",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "sexo_cd",
+                    "description": "Sexo del paciente",
+                    "standard_classification": "ISO/IEC 5218",
+                    "format": "Integer",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "",
+                    "possible_data_source": "base de datos de usuarios",
+                    "observations_comments": "",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "grupo_edad_cd",
+                    "description": "Grupo quinquenal de edad",
+                    "standard_classification": "",
+                    "format": "Integer",
+                    "type": "Categorical",
+                    "units": "Quinquenio",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "{0 = '0-4 años'; 1 = '5-9 años'; 2 = '10-14 años'; ...}",
+                    "possible_data_source": "La ZBS se captura en el momento de seleccionar el individuo para su inclusión en la cohorte",
+                    "observations_comments": "Calculada a partir de la edad de las personas con tarjeta sanitaria adscritas a cada ZBS",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "nivel_copago_cd",
+                    "description": "Categoría de copago ",
+                    "standard_classification": "RDL16/2012 (BOE-A-2012-5403)",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "{0 ='<18.000€'; 1 = '>=18.000€'; 2 = 'Desconocido'}",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "Calculada a partir de la TSI de las personas con tarjeta sanitaria adscritas a cada ZBS (población)",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "poblacion_nm",
+                    "description": "Numero de residentes con tarjeta sanitarias adscritos a una ZBS (población ZBS)",
+                    "standard_classification": "",
+                    "format": "Integer",
+                    "type": "Numerical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "Sumatorio de personas con tarjeta sanitaria adscritas a cada ZBS (población) por cada uno de los estratos configurados por las variables anteriores",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "Población por zona básica de salud y año, estratificada por sexo, grupo quinquenal de edad y nivel de copago (3 niveles)",
+                    "examples": "",
+                    "catalog": null
+                }
+            ],
+            "rules": [
+                {
+                    "expression": "año_cd BETWEEN 2013 AND 2022",
+                    "name": "año_cd",
+                    "description": "Rule for column año_cd"
+                },
+                {
+                    "expression": "grupo_edad_cd BETWEEN 1 AND 18",
+                    "name": "grupo_edad_cd",
+                    "description": "Rule for column grupo_edad_cd"
+                },
+                {
+                    "expression": "sexo_cd IN ('0', '1', '2', '9')",
+                    "name": "sexo_cd",
+                    "description": "Rule for column sexo_cd"
+                },
+                {
+                    "expression": "copago_cd IN ('0', '1', '2')",
+                    "name": "copago_cd",
+                    "description": "Rule for column copago_cd"
+                }
+            ]
+        },
+        {
+            "uuid": "b7fed9a7-52a9-4d48-b38e-98a467d931df",
+            "name": "test",
+            "time_varying": false,
+            "variables": [
+                {
+                    "label": "paciente_id",
+                    "description": "Pseudoidentificador del paciente",
+                    "standard_classification": "UTF-8",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "algoritmo pseudonimizacion",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "Cada paciente tendrá tantos registros de test como mediciones realizadas a lo largo del periodo de estudio",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "test_dt",
+                    "description": "Fecha en la que se realizó el test",
+                    "standard_classification": "ISO 8601",
+                    "format": "Date",
+                    "type": "Date",
+                    "units": "YYYY-MM-DD",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "",
+                    "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "",
+                    "examples": "2022-01-02",
+                    "catalog": null
+                },
+                {
+                    "label": "test_cd",
+                    "description": "Denominación del test que se le ha hecho al paciente",
+                    "standard_classification": "UTF-8",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "{'pad' = 'Presión Arterial Diastólica (mmHg)'; 'pas' = 'Presión Arterial Sistólica (mmHg)'; 'pn' = 'Pépitido natriurético (BNP y NT-proBNP)'; 'ldl' = 'Colesterol LDL (mg/dL)'}",
+                    "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "",
+                    "examples": "pad",
+                    "catalog": null
+                },
+                {
+                    "label": "test_resultado_nm",
+                    "description": "Resultado (valor) del test realizado",
+                    "standard_classification": "",
+                    "format": "Double",
+                    "type": "Numerical",
+                    "units": "Unidades dependientes del test",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "",
+                    "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "Verificar que las unidades de los resultados son consistente con las unidades especificadas para cada test (medición)",
+                    "examples": "90",
+                    "catalog": null
+                }
+            ],
+            "rules": [
+                {
+                    "expression": "test_dt BETWEEN ''2022-01-01'' AND ''2022-12-31''",
+                    "name": "test_dt",
+                    "description": "Rule for column test_dt"
+                }
+            ]
+        },
+        {
+            "uuid": "f55eb392-022d-4d3b-a15f-ec898f11d3d7",
+            "name": "examenes",
+            "time_varying": false,
+            "variables": [
+                {
+                    "label": "paciente_id",
+                    "description": "Pseudoidentificador del paciente",
+                    "standard_classification": "UTF-8",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "algoritmo pseudonimizacion",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "Cada paciente tendrá tantos registros como exámenes/intervenciones se le hayan realizado durante el periodo de estudio",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "examen_dt",
+                    "description": "Fecha en la que se realizó el examen ",
+                    "standard_classification": "ISO 8601",
+                    "format": "Date",
+                    "type": "Date",
+                    "units": "YYYY-MM-DD",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "YYYY-MM-DD",
+                    "possible_data_source": "Historia Clínica Electrónica Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "",
+                    "examples": "2022-01-02",
+                    "catalog": null
+                },
+                {
+                    "label": "examen_cd",
+                    "description": "Denominación del examen (prueba) realizado al paciente",
+                    "standard_classification": "UTF-8",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "{'ecocardio' = 'ecocardiograma'; 'fevi' = 'Determinación fracción eyección ventrículo izq.'; 'chads' = 'Evaluación escala CHADS2Vasc'; 'vacuna_gripe' = 'Vacunación antigripal'}",
+                    "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "Los resultados deben ser consistentes con la prueba realizada",
+                    "examples": "ecocardio",
+                    "catalog": null
+                },
+                {
+                    "label": "examen_resultado_cd",
+                    "description": "Resultado (valor) del examen/intervención realizada al paciente",
+                    "standard_classification": "",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Calculated",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "En el caso de 'ecocardiograma' y 'vacuna_gripe' el resultado esperado es 'realizada', mientras que para 'fevi' y 'chads' se espera el valor del resultado como texto",
+                    "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "Los resultados deben ser consistentes con la prueba realizada",
+                    "examples": "realizada",
+                    "catalog": null
+                }
+            ],
+            "rules": [
+                {
+                    "expression": "exam_dt BETWEEN '2022-01-01' AND '2022-12-31'",
+                    "name": "exam_dt",
+                    "description": "Rule for column exam_dt"
+                }
+            ]
+        },
+        {
+            "uuid": "0ebbccc5-7d24-4cc8-847b-dedab800ae44",
+            "name": "tratamiento",
+            "time_varying": false,
+            "variables": [
+                {
+                    "label": "patiente_id",
+                    "description": "Pseudoidentificador del paciente",
+                    "standard_classification": "UTF-8",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "algoritmo pseudonimizacion",
+                    "possible_data_source": "Base de Datos de Usuario (BDU)",
+                    "observations_comments": "Cada paciente tendrá tantos registros de tratamiento como prescripciones cuya fecha de inicio o fecha de fin se encuentre dentro del periodo de estudio",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "fecha_inicio_prescripcion_dt",
+                    "description": "Fecha de inicio de prescripción",
+                    "standard_classification": "ISO-8601",
+                    "format": "Date",
+                    "type": "Date",
+                    "units": "YYYY-MM-DD",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "YYYY-MM-DD",
+                    "possible_data_source": "Receta electrónica (i.e., e-Receta) o Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "",
+                    "examples": "2022-01-02",
+                    "catalog": null
+                },
+                {
+                    "label": "fecha_fin_prescripcion_dt",
+                    "description": "Fecha de fin de la prescripción",
+                    "standard_classification": "ISO-8601",
+                    "format": "Date",
+                    "type": "Date",
+                    "units": "YYYY-MM-DD",
+                    "requirement_level": "Recommended",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "",
+                    "possible_data_source": "Receta electrónica (i.e., e-Receta) o Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "atc_tratamiento_cd",
+                    "description": "Código de tratamiento ATC",
+                    "standard_classification": "UTF-8",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": true,
+                    "transformations_from_origin": "",
+                    "possible_data_source": "Receta electrónica (i.e., e-Receta) o Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "En el catálogo de códigos ATC de medicamentos relevantes se incluye su indicación según condición de estudio de interés para este trabajo, en el campo 'enfermedad_st'",
+                    "examples": "",
+                    "catalog": {
+                        "column_name": "code_clean",
+                        "filename": "atc_tratamiento_cd.csv"
+                    }
+                }
+            ],
+            "rules": [
+                {
+                    "expression": "fecha_inicio_prescripcion <= '2022-12-31'",
+                    "name": "fecha_inicio_prescripcion",
+                    "description": "Rule for column fecha_inicio_prescripcion"
+                },
+                {
+                    "expression": "fecha_final_precripcion>='2022-01-01' AND fecha_inicio_prescripcion <= fecha_final_precripcion",
+                    "name": "fecha_final_precripcion",
+                    "description": "Rule for column fecha_final_precripcion"
+                }
+            ]
+        },
+        {
+            "uuid": "26ac4cb1-4d5d-4e8f-89d6-6f6338a3f219",
+            "name": "comorbilidad",
+            "time_varying": false,
+            "variables": [
+                {
+                    "label": "patiente_id",
+                    "description": "Pseudoidentificador del paciente",
+                    "standard_classification": "UTF-8",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "algoritmo pseudonimizacion",
+                    "possible_data_source": "Base de Datos de Usuarios (BDU)",
+                    "observations_comments": "Cada paciente tiene tantos registros como comorbilidades estén presentes en el momento de entrar en la cohorte",
+                    "examples": "",
+                    "catalog": null
+                },
+                {
+                    "label": "comorbilidad_cd",
+                    "description": "Comorbilidad del paciente anterior a la entrada en la cohorte {Infarto agudo de miocardio; Diabetes}",
+                    "standard_classification": "CIAP-2, ICD-9-MC-ES, ICD-10-MC-ES",
+                    "format": "String",
+                    "type": "Categorical",
+                    "units": "",
+                    "requirement_level": "Required",
+                    "characteristic": "Calculated",
+                    "catalog_bl": true,
+                    "transformations_from_origin": "{1 = 'IAM'; 2 = 'Diabetes'}",
+                    "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "Pacientes con episodio de AP abierto de cualquiera de estas comorbilidades ",
+                    "examples": "",
+                    "catalog": {
+                        "column_name": "comorbilidad_cd",
+                        "filename": "comorbilidad_cd.csv"
+                    }
+                },
+                {
+                    "label": "fecha_diag_comorbilidad_dt",
+                    "description": "Fecha en la que se diagnostica la comorbilidad al paciente",
+                    "standard_classification": "ISO-8601",
+                    "format": "Date",
+                    "type": "Date",
+                    "units": "YYYY-MM-DD",
+                    "requirement_level": "Required",
+                    "characteristic": "Observed",
+                    "catalog_bl": false,
+                    "transformations_from_origin": "YYYY-MM-DD",
+                    "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
+                    "observations_comments": "La fecha de diagnóstico de las comorbilidades debe ser estrictamente anterior a la fecha de inicio del periodo de estudio ('fecha_diag_comorbilidad_dt' < 2022-01-01)",
+                    "examples": "",
+                    "catalog": null
+                }
+            ],
+            "rules": [
+                {
+                    "expression": "fecha_diagnostico_comorbilidad <= '2022-12-31'",
+                    "name": "fecha_diagnostico_comorbilidad",
+                    "description": "Rule for column fecha_diagnostico_comorbilidad"
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "left_entity": "paciente",
+            "right_entity": "test",
+            "join_type": "LEFT JOIN",
+            "left_column": "paciente_id",
+            "right_column": "paciente_id"
+        },
+        {
+            "left_entity": "paciente",
+            "right_entity": "examenes",
+            "join_type": "LEFT JOIN",
+            "left_column": "paciente_id",
+            "right_column": "paciente_id"
+        },
+        {
+            "left_entity": "paciente",
+            "right_entity": "tratamiento",
+            "join_type": "LEFT JOIN",
+            "left_column": "paciente_id",
+            "right_column": "patiente_id"
+        },
+        {
+            "left_entity": "paciente",
+            "right_entity": "comorbilidad",
+            "join_type": "LEFT JOIN",
+            "left_column": "paciente_id",
+            "right_column": "patiente_id"
+        }
+    ]
+}
