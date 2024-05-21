@@ -1,3 +1,37 @@
 encoding,code,code_clean,description,source,observations,comorbilidad_cd
-CIAP-2,K75,K75,Infarto Agudo de Miocardio (IAM),,,1
-CIAP-2,T90,T90,Diabetes (DM),,,2
+ciap-2,K75,K75,Infarto Agudo de Miocardio (IAM),,,1
+icd-9-mc-es,410,410,Infarto agudo de miocardio,,,1
+icd-9-mc-es,411,411, Otras formas agudas y subagudas de cardiopatia isquemica,,,1
+icd-9-mc-es,412,412,Infarto de miocardio antiguo,,,1
+icd-10-mc-es,I210,I210,Infarto agudo de miocardio con elevacion de ST (IAMCEST) de cara anterior,,,1
+icd-10-mc-es,I211,I211,Infarto agudo de miocardio con elevacion de ST (IAMCEST) de cara inferior,,,1
+icd-10-mc-es,I212,I212,Infarto agudo de miocardio con elevacion de ST (IAMCEST) de otra localizacion,,,1
+icd-10-mc-es,I213,I213,Infarto agudo de miocardio con elevacion de ST (IAMCEST) de localizacion no especificada,,,1
+icd-10-mc-es,I214,I214,Infarto agudo de miocardio sin elevacion de ST (IAMSEST),,,1
+icd-10-mc-es,I219,I219,Infarto agudo del miocardio sin otra especificacion,,,1
+icd-10-mc-es,I220,I220,Infarto agudo de miocardio subsiguiente con elevacion de ST (IAMCEST) de pared anterior,,,1
+icd-10-mc-es,I221,I221,Infarto agudo de miocardio subsiguiente con elevacion de ST (IAMCEST) de cara inferior,,,1
+icd-10-mc-es,I228,I228,Infarto agudo de miocardio subsiguiente con elevacion de ST (IAMCEST) de otras localizaciones,,,1
+icd-10-mc-es,I229,I229,Infarto agudo de miocardio subsiguiente con elevacion de ST (IAMCEST) de localizacion no especi_cada,,,1
+ciap-2,T90,T90,Diabetes (DM),,,2
+icd-9-mc-es,250.00,25000,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.02,25002,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.10,25010,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.12,25012,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.20,25020,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.22,25022,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.30,25030,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.32,25032,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.40,25040,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.42,25042,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.50,25050,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.52,25052,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.60,25060,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.62,25062,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.70,25070,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.72,25072,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.80,25080,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.82,25082,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.90,25090,Diabetes mellitus tipo 2 (DM2),,,2
+icd-9-mc-es,250.92,25092,Diabetes mellitus tipo 2 (DM2),,,2
+icd-10-mc-es,E11,E11,Diabetes mellitus tipo 2 (DM2),,,2

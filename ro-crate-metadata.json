@@ -5,101 +5,101 @@
             "@id": "./",
             "@type": "Dataset",
             "creator": "Common Data Model Builder",
-            "datePublished": "2024-04-16T11:43:00+00:00",
-            "description": "Estudio de las variaciones a nivel de \u00e1rea sanitaria de la atenci\u00f3n cardiol\u00f3gica en Atenci\u00f3n Primaria. Este estudio tiene como objetivos espec\u00edficos:\na)Definir operativamente un listado de indicadores que describan los cuidados (proceso), el tratamiento farmac\u00e9utico y los resultados intermedios de la atenci\u00f3n a personas con enfermedades card\u00edacas cr\u00f3nicas, en concreto, cardiopat\u00eda isqu\u00e9mica, insuficiencia card\u00edaca congestiva y fibrilaci\u00f3n auricular; b) Especificar el modelo de datos requerido para medir de forma sistem\u00e1tica y consistente estos indicadores a nivel de zona b\u00e1sica de salud, de conformidad con los datos de vida real disponibles en los sistemas de informaci\u00f3n de salud de las CCAA; c) Describir y cartografiar la variaci\u00f3n geogr\u00e1fica de la atenci\u00f3n al paciente card\u00edaco por zona b\u00e1sica de salud, analizando tambi\u00e9n las diferencias por sexo y por nivel socioecon\u00f3mico; d) Presentar los resultados de monitorizaci\u00f3n de forma interactiva. \n",
+            "datePublished": "2024-05-21T10:59:01+00:00",
+            "description": "Estudio de las variaciones a nivel de \u00e1rea sanitaria de la atenci\u00f3n cardiol\u00f3gica en Atenci\u00f3n Primaria. Este estudio tiene como objetivos espec\u00edficos:\na) Definir operativamente un listado de indicadores que describan los cuidados (proceso), el tratamiento farmac\u00e9utico y los resultados intermedios de la atenci\u00f3n a personas con enfermedades card\u00edacas cr\u00f3nicas, en concreto, cardiopat\u00eda isqu\u00e9mica, insuficiencia card\u00edaca congestiva y fibrilaci\u00f3n auricular; b) Especificar el modelo de datos requerido para medir de forma sistem\u00e1tica y consistente estos indicadores a nivel de zona b\u00e1sica de salud, de conformidad con los datos de vida real disponibles en los sistemas de informaci\u00f3n de salud de las CCAA; c) Describir y cartografiar la variaci\u00f3n geogr\u00e1fica de la atenci\u00f3n al paciente card\u00edaco por zona b\u00e1sica de salud, analizando tambi\u00e9n las diferencias por sexo y por nivel socioecon\u00f3mico; d) Presentar los resultados de monitorizaci\u00f3n de forma interactiva. \n",
             "hasPart": [
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/README.md"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/README.md"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/LICENSE.md"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/LICENSE.md"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/man_container_deployment.md"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/man_container_deployment.md"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/.gitignore"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/.gitignore"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/inputs/data.duckdb"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/inputs/data.duckdb"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/src/dqa-scripts/dqa.py"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/src/dqa-scripts/dqa.py"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/src/validation-scripts/validator.py"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/src/validation-scripts/validator.py"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/src/validation-scripts/validator_report.qmd"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/src/validation-scripts/validator_report.qmd"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/src/validation-scripts/_quarto.yml"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/src/validation-scripts/_quarto.yml"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/src/analysis-scripts/r_report_template.qmd"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/src/analysis-scripts/r_report_template.qmd"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/src/analysis-scripts/_quarto.yml"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/src/analysis-scripts/_quarto.yml"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/cdmb_config.json"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/cdmb_config.json"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/common_datamodel.xlsx"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/common_datamodel.xlsx"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/cohort_definition_inclusion.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/cohort_definition_inclusion.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_paciente.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_paciente.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/paciente/catalogs/enfermedad_cd.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/paciente/catalogs/enfermedad_cd.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/paciente/catalogs/ccaa_cd.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/paciente/catalogs/ccaa_cd.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/paciente/validation-rules/rules_set_paciente.json"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/paciente/validation-rules/rules_set_paciente.json"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_poblacion.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_poblacion.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/poblacion/catalogs/ccaa_cd.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/poblacion/catalogs/ccaa_cd.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/poblacion/validation-rules/rules_set_poblacion.json"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/poblacion/validation-rules/rules_set_poblacion.json"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_test.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_test.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/test/validation-rules/rules_set_test.json"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/test/validation-rules/rules_set_test.json"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_examenes.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_examenes.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/examenes/validation-rules/rules_set_examenes.json"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/examenes/validation-rules/rules_set_examenes.json"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_tratamiento.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_tratamiento.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/tratamiento/catalogs/atc_tratamiento_cd.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/tratamiento/catalogs/atc_tratamiento_cd.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/tratamiento/validation-rules/rules_set_tratamiento.json"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/tratamiento/validation-rules/rules_set_tratamiento.json"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_comorbilidad.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_comorbilidad.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/comorbilidad/catalogs/comorbilidad_cd.csv"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/comorbilidad/catalogs/comorbilidad_cd.csv"
                 },
                 {
-                    "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/comorbilidad/validation-rules/rules_set_comorbilidad.json"
+                    "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/comorbilidad/validation-rules/rules_set_comorbilidad.json"
                 }
             ],
             "keywords": "indicadores, atlasvpm, cardiolog\u00eda, atenci\u00f3n primaria, variaciones en la pr\u00e1ctica m\u00e9dica",
@@ -123,7 +123,7 @@
             "name": "Angulo-Pueyo, Ester"
         },
         {
-            "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f",
+            "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93",
             "@type": "Person",
             "affiliation": "Instituto Aragon\u00e9s de Ciencias de la Salud (IACS)",
             "name": "Angulo-Pueyo, Ester"
@@ -135,7 +135,7 @@
             "name": "Mart\u00ednez-Lizaga, Natalia"
         },
         {
-            "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504",
+            "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802",
             "@type": "Person",
             "affiliation": "Instituto Aragon\u00e9s de Ciencias de la Salud (IACS)",
             "name": "Mart\u00ednez-Lizaga, Natalia"
@@ -147,143 +147,143 @@
             "name": "Bernal-Delgado, Enrique"
         },
         {
-            "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d",
+            "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312",
             "@type": "Person",
             "affiliation": "Instituto Aragon\u00e9s de Ciencias de la Salud (IACS)",
             "name": "Bernal-Delgado, Enrique"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/README.md",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/README.md",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/markdown",
             "name": "README"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/LICENSE.md",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/LICENSE.md",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/markdown",
             "name": "License"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/man_container_deployment.md",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/man_container_deployment.md",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/markdown",
             "name": "Manual on how to deploy the project in a docker container"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/.gitignore",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/.gitignore",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/plain",
             "name": ".gitignore file"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/inputs/data.duckdb",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/inputs/data.duckdb",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/octet-stream",
             "name": "SQL OLAP auxiliary database"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/src/dqa-scripts/dqa.py",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/src/dqa-scripts/dqa.py",
             "@type": [
                 "File",
                 "SoftwareSourceCode"
@@ -293,26 +293,26 @@
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/plain",
             "name": "Data Quality Assessment script"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/src/validation-scripts/validator.py",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/src/validation-scripts/validator.py",
             "@type": [
                 "File",
                 "SoftwareSourceCode"
@@ -322,26 +322,26 @@
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/plain",
             "name": "Rules validator file"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/src/validation-scripts/validator_report.qmd",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/src/validation-scripts/validator_report.qmd",
             "@type": [
                 "File",
                 "SoftwareSourceCode"
@@ -351,26 +351,26 @@
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/plain",
             "name": "Rules validator report"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/src/validation-scripts/_quarto.yml",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/src/validation-scripts/_quarto.yml",
             "@type": [
                 "File",
                 "SoftwareSourceCode"
@@ -380,26 +380,26 @@
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/yaml",
             "name": "Rules validator report metadata"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/src/analysis-scripts/r_report_template.qmd",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/src/analysis-scripts/r_report_template.qmd",
             "@type": [
                 "File",
                 "SoftwareSourceCode"
@@ -409,26 +409,26 @@
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/plain",
             "name": "Quarto analysis script template"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/src/analysis-scripts/_quarto.yml",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/src/analysis-scripts/_quarto.yml",
             "@type": [
                 "File",
                 "SoftwareSourceCode"
@@ -438,539 +438,539 @@
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/yaml",
             "name": "Analysis script report metadata"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/cdmb_config.json",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/cdmb_config.json",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/json",
             "name": "CDM builder and project configuration file"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/common_datamodel.xlsx",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/common_datamodel.xlsx",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             "name": "Common Data Model spreadsheet"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/cohort_definition_inclusion.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/cohort_definition_inclusion.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Crosswalks for the cohort definition inclusion"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_paciente.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_paciente.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Synthetic data for entity: paciente"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/paciente/catalogs/enfermedad_cd.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/paciente/catalogs/enfermedad_cd.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Catalog file for paciente-enfermedad_cd"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/paciente/catalogs/ccaa_cd.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/paciente/catalogs/ccaa_cd.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Catalog file for paciente-ccaa_cd"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/paciente/validation-rules/rules_set_paciente.json",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/paciente/validation-rules/rules_set_paciente.json",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/json",
             "name": "Rule set for entity: paciente"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_poblacion.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_poblacion.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Synthetic data for entity: poblacion"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/poblacion/catalogs/ccaa_cd.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/poblacion/catalogs/ccaa_cd.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Catalog file for poblacion-ccaa_cd"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/poblacion/validation-rules/rules_set_poblacion.json",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/poblacion/validation-rules/rules_set_poblacion.json",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/json",
             "name": "Rule set for entity: poblacion"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_test.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_test.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Synthetic data for entity: test"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/test/validation-rules/rules_set_test.json",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/test/validation-rules/rules_set_test.json",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/json",
             "name": "Rule set for entity: test"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_examenes.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_examenes.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Synthetic data for entity: examenes"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/examenes/validation-rules/rules_set_examenes.json",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/examenes/validation-rules/rules_set_examenes.json",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/json",
             "name": "Rule set for entity: examenes"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_tratamiento.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_tratamiento.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Synthetic data for entity: tratamiento"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/tratamiento/catalogs/atc_tratamiento_cd.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/tratamiento/catalogs/atc_tratamiento_cd.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Catalog file for tratamiento-atc_tratamiento_cd"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/tratamiento/validation-rules/rules_set_tratamiento.json",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/tratamiento/validation-rules/rules_set_tratamiento.json",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/json",
             "name": "Rule set for entity: tratamiento"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/synthetic-data/synthetic_comorbilidad.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/synthetic-data/synthetic_comorbilidad.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Synthetic data for entity: comorbilidad"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/comorbilidad/catalogs/comorbilidad_cd.csv",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/comorbilidad/catalogs/comorbilidad_cd.csv",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "text/csv",
             "name": "Catalog file for comorbilidad-comorbilidad_cd"
         },
         {
-            "@id": "tmpha6q9y06/20240416134256_cdmb/docs/CDM/entities/comorbilidad/validation-rules/rules_set_comorbilidad.json",
+            "@id": "tmpjsr8wui4/20240521125857_cdmb/docs/CDM/entities/comorbilidad/validation-rules/rules_set_comorbilidad.json",
             "@type": "File",
             "author": [
                 {
                     "@id": "https://orcid.org/0000-0001-7442-3450"
                 },
                 {
-                    "@id": "#295386fc-11fa-4d14-bed9-ad44e9d7474f"
+                    "@id": "#56a80d02-7183-44b3-ac9b-228a8c952e93"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-9586-7955"
                 },
                 {
-                    "@id": "#9ab866a8-0e87-4c2d-b5e6-d61ef31f2504"
+                    "@id": "#01604333-2dcc-4b28-8b49-e5f215abe802"
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-0961-3298"
                 },
                 {
-                    "@id": "#be07c523-5a7f-4bb4-8295-b561ac795f3d"
+                    "@id": "#a4287e70-91fd-48f4-95a0-58ff5169b312"
                 }
             ],
             "encodingFormat": "application/json",
