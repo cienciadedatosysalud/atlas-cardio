@@ -1,272 +1,156 @@
 {
     "files": [
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\cdmb_config.json",
-            "hash": "e9ab345f83ab20de12ed7408bb20b4db"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\cohort_definition_inclusion.csv",
-            "hash": "96616b6df2bec32fb306b03d1c681e76"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\common_datamodel.xlsx",
-            "hash": "22d44e6127d0d365c0884dbb0e1f5621"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\comorbilidad\\catalogs\\comorbilidad_cd.csv",
-            "hash": "a0d75113702676bd9c87bb963770b0f0"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\comorbilidad\\validation-rules\\rules_set_comorbilidad.json",
-            "hash": "9cf93644e7affb469443e1fab11e810b"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\examenes\\validation-rules\\rules_set_examenes.json",
-            "hash": "25fad79ed890ab75ecc5bccffaab8b36"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\paciente\\catalogs\\ccaa_cd.csv",
-            "hash": "0d3688568c4c265f1c503ec6d7713eac"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\paciente\\catalogs\\enfermedad_cd.csv",
-            "hash": "96616b6df2bec32fb306b03d1c681e76"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\paciente\\validation-rules\\rules_set_paciente.json",
-            "hash": "a84e87b538fdfa0f5de2ce4a2b1d2764"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\poblacion\\catalogs\\ccaa_cd.csv",
-            "hash": "0d3688568c4c265f1c503ec6d7713eac"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\poblacion\\validation-rules\\rules_set_poblacion.json",
-            "hash": "5d81544d3bf4b7b66f231bcc81c0f6fc"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\test\\validation-rules\\rules_set_test.json",
-            "hash": "78482ea983dae0f4bcd97d3f0455d71e"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\tratamiento\\catalogs\\atc_tratamiento_cd.csv",
-            "hash": "5ad2927b0999141d6e890dc84a22a57a"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\tratamiento\\validation-rules\\rules_set_tratamiento.json",
-            "hash": "3f90c3f2796fef09c8f44b3a8aaacf04"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\ER.gv",
-            "hash": "f7515f85bc0484d06f4942edc16c3ea8"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_comorbilidad.csv",
-            "hash": "5862465cd61b3cde75c83c606e819e16"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_examenes.csv",
-            "hash": "446b0fdecc044054c0a15bda9a5f6126"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_paciente.csv",
-            "hash": "53381f6eace9587a158f58e6410c7f31"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_poblacion.csv",
-            "hash": "d9674bd664c3dea7fa2f2d163cab2121"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_test.csv",
-            "hash": "16885a837f67e7152d4100363cbeee6c"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_tratamiento.csv",
-            "hash": "b273eb0434e435244efe1fee774e94c2"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\inputs\\data.duckdb",
-            "hash": "50adbe6f18939b76d6ef0d29c10b929e"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\inputs\\readme.txt",
-            "hash": "52039a1eabfedece8bc5825b1e2ca83d"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\LICENSE.md",
-            "hash": "527dc6cad772ccb187d5bfe5af738204"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\man_container_deployment.md",
-            "hash": "be3c5cbc5077fc7eff26536315bffa78"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\outputs\\logs\\readme.txt",
-            "hash": "96ce67054dc340e41b7dd13721163067"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\outputs\\readme.txt",
-            "hash": "122232d632a879afd16e671f9b81c845"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\README.md",
-            "hash": "30c07b4019d0ddf8443a9a7611dc8f4f"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\ro-crate-metadata.json",
-            "hash": "9808b601979e6fc5331bf91855bdb8ff"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\src\\analysis-scripts\\r_report_template.qmd",
-            "hash": "82495de8927159ebb7924b36f611b0b2"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\src\\analysis-scripts\\_quarto.yml",
+            "filename": "20240705085544_cdmb/src/analysis-scripts/_quarto.yml",
             "hash": "aa2f538702b55d59e782d63d463a75a7"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\src\\check_load-scripts\\check_load.py",
+            "filename": "20240705085544_cdmb/src/analysis-scripts/r_report_template.qmd",
+            "hash": "82495de8927159ebb7924b36f611b0b2"
+        },
+        {
+            "filename": "20240705085544_cdmb/src/check_load-scripts/inputs/readme.txt",
+            "hash": "52039a1eabfedece8bc5825b1e2ca83d"
+        },
+        {
+            "filename": "20240705085544_cdmb/src/check_load-scripts/check_load.py",
             "hash": "3dd6bfc1f3530c5affbcde0cd5ba6c58"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\src\\check_load-scripts\\inputs\\readme.txt",
-            "hash": "52039a1eabfedece8bc5825b1e2ca83d"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\src\\dqa-scripts\\dqa.py",
+            "filename": "20240705085544_cdmb/src/dqa-scripts/dqa.py",
             "hash": "093bdfb4f475c487661d16c4ae9c018d"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\src\\validation-scripts\\validator.py",
-            "hash": "2a78c043ae7f75560ea258665b78300b"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\src\\validation-scripts\\validator_report.qmd",
-            "hash": "f0cecbcff141a9f6cbaa1b1df60e7818"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\src\\validation-scripts\\_quarto.yml",
+            "filename": "20240705085544_cdmb/src/validation-scripts/_quarto.yml",
             "hash": "aa2f538702b55d59e782d63d463a75a7"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\cdmb_config.json",
-            "hash": "e9ab345f83ab20de12ed7408bb20b4db"
+            "filename": "20240705085544_cdmb/src/validation-scripts/validator_report.qmd",
+            "hash": "f0cecbcff141a9f6cbaa1b1df60e7818"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\cohort_definition_inclusion.csv",
-            "hash": "96616b6df2bec32fb306b03d1c681e76"
+            "filename": "20240705085544_cdmb/src/validation-scripts/validator.py",
+            "hash": "2a78c043ae7f75560ea258665b78300b"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\common_datamodel.xlsx",
-            "hash": "22d44e6127d0d365c0884dbb0e1f5621"
+            "filename": "20240705085544_cdmb/outputs/readme.txt",
+            "hash": "122232d632a879afd16e671f9b81c845"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\comorbilidad\\catalogs\\comorbilidad_cd.csv",
-            "hash": "a0d75113702676bd9c87bb963770b0f0"
+            "filename": "20240705085544_cdmb/outputs/logs/readme.txt",
+            "hash": "96ce67054dc340e41b7dd13721163067"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\comorbilidad\\validation-rules\\rules_set_comorbilidad.json",
-            "hash": "9cf93644e7affb469443e1fab11e810b"
+            "filename": "20240705085544_cdmb/docs/CDM/cdmb_config.json",
+            "hash": "e0caa652d964d206f71a424124f7b8cb"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\examenes\\validation-rules\\rules_set_examenes.json",
-            "hash": "25fad79ed890ab75ecc5bccffaab8b36"
+            "filename": "20240705085544_cdmb/docs/CDM/ER.gv.png",
+            "hash": "590d7a701eada0be9b5cdf549e3b1e02"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\paciente\\catalogs\\ccaa_cd.csv",
-            "hash": "0d3688568c4c265f1c503ec6d7713eac"
+            "filename": "20240705085544_cdmb/docs/CDM/synthetic-data/synthetic_test.csv",
+            "hash": "26b69958b8d276bd804df38cfb4044ab"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\paciente\\catalogs\\enfermedad_cd.csv",
-            "hash": "96616b6df2bec32fb306b03d1c681e76"
+            "filename": "20240705085544_cdmb/docs/CDM/synthetic-data/synthetic_examenes.csv",
+            "hash": "e65457dcfbdedc8c0009f94f8cc58d71"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\paciente\\validation-rules\\rules_set_paciente.json",
-            "hash": "a84e87b538fdfa0f5de2ce4a2b1d2764"
+            "filename": "20240705085544_cdmb/docs/CDM/synthetic-data/synthetic_comorbilidad.csv",
+            "hash": "df814fcb58c6acb746ba27b4a1f7d502"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\poblacion\\catalogs\\ccaa_cd.csv",
-            "hash": "0d3688568c4c265f1c503ec6d7713eac"
+            "filename": "20240705085544_cdmb/docs/CDM/synthetic-data/synthetic_paciente.csv",
+            "hash": "d4c373fa9c463b646c26f2c536f0a7c6"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\poblacion\\validation-rules\\rules_set_poblacion.json",
-            "hash": "5d81544d3bf4b7b66f231bcc81c0f6fc"
+            "filename": "20240705085544_cdmb/docs/CDM/synthetic-data/synthetic_tratamiento.csv",
+            "hash": "82a27ffad60d74d42b0140498928e316"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\test\\validation-rules\\rules_set_test.json",
-            "hash": "78482ea983dae0f4bcd97d3f0455d71e"
+            "filename": "20240705085544_cdmb/docs/CDM/synthetic-data/synthetic_poblacion.csv",
+            "hash": "129cc1d47b4a69d8ad71cf2f18e0b33c"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\tratamiento\\catalogs\\atc_tratamiento_cd.csv",
-            "hash": "5ad2927b0999141d6e890dc84a22a57a"
+            "filename": "20240705085544_cdmb/docs/CDM/ER.gv",
+            "hash": "03798790122fa559e3054b4983f97053"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\entities\\tratamiento\\validation-rules\\rules_set_tratamiento.json",
-            "hash": "3f90c3f2796fef09c8f44b3a8aaacf04"
+            "filename": "20240705085544_cdmb/docs/CDM/common_datamodel.xlsx",
+            "hash": "831a6ec2428793c5c2bcbe2dfc363751"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_comorbilidad.csv",
-            "hash": "5862465cd61b3cde75c83c606e819e16"
+            "filename": "20240705085544_cdmb/docs/CDM/cohort_definition_inclusion.csv",
+            "hash": "eeb019adab1e8ec929837ed25e77e9b1"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_examenes.csv",
-            "hash": "446b0fdecc044054c0a15bda9a5f6126"
+            "filename": "20240705085544_cdmb/docs/CDM/entities/poblacion/catalogs/ccaa_cd.csv",
+            "hash": "ef2aac5971a9915f84bb2a92f486bc41"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_paciente.csv",
-            "hash": "53381f6eace9587a158f58e6410c7f31"
+            "filename": "20240705085544_cdmb/docs/CDM/entities/poblacion/validation-rules/rules_set_poblacion.json",
+            "hash": "70bd77b9b5f574716f86bf221202bd75"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_poblacion.csv",
-            "hash": "d9674bd664c3dea7fa2f2d163cab2121"
+            "filename": "20240705085544_cdmb/docs/CDM/entities/test/validation-rules/rules_set_test.json",
+            "hash": "dc79940016642895dc26f05dc5be3311"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_test.csv",
-            "hash": "16885a837f67e7152d4100363cbeee6c"
+            "filename": "20240705085544_cdmb/docs/CDM/entities/comorbilidad/catalogs/comorbilidad_cd.csv",
+            "hash": "ff9d64311225af7de6da2c5875b90b48"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\docs\\CDM\\synthetic-data\\synthetic_tratamiento.csv",
-            "hash": "b273eb0434e435244efe1fee774e94c2"
+            "filename": "20240705085544_cdmb/docs/CDM/entities/comorbilidad/validation-rules/rules_set_comorbilidad.json",
+            "hash": "54820b9d46e27d2fb5671ea51dbd8ebd"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\inputs\\data.duckdb",
-            "hash": "50adbe6f18939b76d6ef0d29c10b929e"
+            "filename": "20240705085544_cdmb/docs/CDM/entities/examenes/validation-rules/rules_set_examenes.json",
+            "hash": "202993bb25760630162b47d528cca404"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\LICENSE.md",
-            "hash": "527dc6cad772ccb187d5bfe5af738204"
+            "filename": "20240705085544_cdmb/docs/CDM/entities/tratamiento/catalogs/atc_tratamiento_cd.csv",
+            "hash": "5934e0b65d00da63f70633d1c2d092c7"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\man_container_deployment.md",
+            "filename": "20240705085544_cdmb/docs/CDM/entities/tratamiento/validation-rules/rules_set_tratamiento.json",
+            "hash": "555de278951a224b0cebc9d0ac1b5dd1"
+        },
+        {
+            "filename": "20240705085544_cdmb/docs/CDM/entities/paciente/catalogs/enfermedad_cd.csv",
+            "hash": "eeb019adab1e8ec929837ed25e77e9b1"
+        },
+        {
+            "filename": "20240705085544_cdmb/docs/CDM/entities/paciente/catalogs/ccaa_cd.csv",
+            "hash": "ef2aac5971a9915f84bb2a92f486bc41"
+        },
+        {
+            "filename": "20240705085544_cdmb/docs/CDM/entities/paciente/validation-rules/rules_set_paciente.json",
+            "hash": "9e45f7943a44c67cc13e198f041970af"
+        },
+        {
+            "filename": "20240705085544_cdmb/man_container_deployment.md",
             "hash": "be3c5cbc5077fc7eff26536315bffa78"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\README.md",
+            "filename": "20240705085544_cdmb/inputs/readme.txt",
+            "hash": "52039a1eabfedece8bc5825b1e2ca83d"
+        },
+        {
+            "filename": "20240705085544_cdmb/inputs/data.duckdb",
+            "hash": "06f9ba429a63b1e49f0a9d99107ade4c"
+        },
+        {
+            "filename": "20240705085544_cdmb/LICENSE.md",
+            "hash": "527dc6cad772ccb187d5bfe5af738204"
+        },
+        {
+            "filename": "20240705085544_cdmb/README.md",
             "hash": "30c07b4019d0ddf8443a9a7611dc8f4f"
         },
         {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\src\\analysis-scripts\\r_report_template.qmd",
-            "hash": "82495de8927159ebb7924b36f611b0b2"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\src\\analysis-scripts\\_quarto.yml",
-            "hash": "aa2f538702b55d59e782d63d463a75a7"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\src\\dqa-scripts\\dqa.py",
-            "hash": "093bdfb4f475c487661d16c4ae9c018d"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\src\\validation-scripts\\validator.py",
-            "hash": "2a78c043ae7f75560ea258665b78300b"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\src\\validation-scripts\\validator_report.qmd",
-            "hash": "f0cecbcff141a9f6cbaa1b1df60e7818"
-        },
-        {
-            "filename": ".\\tmpjsr8wui4\\20240521125857_cdmb\\tmpjsr8wui4\\20240521125857_cdmb\\src\\validation-scripts\\_quarto.yml",
-            "hash": "aa2f538702b55d59e782d63d463a75a7"
+            "filename": "20240705085544_cdmb/ro-crate-metadata.json",
+            "hash": "eb0cccecfb16b93d417e676d87750a83"
         }
     ]
 }

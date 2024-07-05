@@ -1,71 +1,71 @@
 {
-    "created_dt": "20240521125857_cdmb",
+    "created_dt": "20240705085544_cdmb",
     "cdmb_version": "1.3.6",
-    "uuid": "f14eceaa-ca91-4ff2-9cb6-b343a5e43b2a",
+    "uuid": "a346f7e4-d17d-444d-9a8e-8c5a1cf0c810",
     "metadata": {
-        "uuid": "f77c0099-ec62-4451-bd22-f4791957e9f3",
-        "project": "AtlasVPM Cardio: Cuidados Ambulatorios en Enfermedad CardÌaca",
-        "funder": "Proyecto financiado por la colaboraciÛn AtlasVPM mediante convenio con la Sociedad EspaÒola de CardiologÌa",
+        "uuid": "6cff932d-4f6f-4b41-a0b5-365d605f3ad0",
+        "project": "AtlasVPM Cardio: Cuidados Ambulatorios en Enfermedad Card√≠aca",
+        "funder": "Proyecto financiado por la colaboraci√≥n AtlasVPM mediante convenio con la Sociedad Espa√±ola de Cardiolog√≠a",
         "url_project": "www.atlasvpm.org",
         "work_package": "1",
         "use_case": "atlasvpm_cardio",
-        "document": "Modelo com˙n de datos",
-        "version_sem": "0.0.3",
+        "document": "Modelo com√∫n de datos",
+        "version_sem": "0.0.4",
         "authors": [
             {
                 "name": "Bernal-Delgado, Enrique (Investigador Principal)",
-                "affiliation": "Instituto AragonÈs de Ciencias de la Salud (IACS)",
+                "affiliation": "Instituto Aragon√©s de Ciencias de la Salud (IACS)",
                 "id": "0000-0002-0961-3298"
             },
             {
                 "name": "Angulo-Pueyo, Ester",
-                "affiliation": "Instituto AragonÈs de Ciencias de la Salud (IACS)",
+                "affiliation": "Instituto Aragon√©s de Ciencias de la Salud (IACS)",
                 "id": "0000-0001-7442-3450"
             },
             {
-                "name": "MartÌnez-Lizaga, Natalia",
-                "affiliation": "Instituto AragonÈs de Ciencias de la Salud (IACS)",
+                "name": "Mart√≠nez-Lizaga, Natalia",
+                "affiliation": "Instituto Aragon√©s de Ciencias de la Salud (IACS)",
                 "id": "0000-0002-9586-7955"
             },
             {
-                "name": "EstupiÒ·n-Romero, Francisco",
-                "affiliation": "Instituto AragonÈs de Ciencias de la Salud (IACS)",
+                "name": "Estupi√±√°n-Romero, Francisco",
+                "affiliation": "Instituto Aragon√©s de Ciencias de la Salud (IACS)",
                 "id": "0000-0002-6285-8120"
             },
             {
-                "name": "Gonz·lez-Galindo, Javier",
-                "affiliation": "Instituto AragonÈs de Ciencias de la Salud (IACS)",
+                "name": "Gonz√°lez-Galindo, Javier",
+                "affiliation": "Instituto Aragon√©s de Ciencias de la Salud (IACS)",
                 "id": "0000-0002-8783-5478"
             },
             {
                 "name": "Royo-Sierra, Santiago",
-                "affiliation": "Instituto AragonÈs de Ciencias de la Salud (IACS)",
+                "affiliation": "Instituto Aragon√©s de Ciencias de la Salud (IACS)",
                 "id": "0000-0002-0048-4370"
             },
             {
-                "name": "Seral-RodrÌguez, Miriam",
-                "affiliation": "Instituto AragonÈs de Ciencias de la Salud (IACS)",
+                "name": "Seral-Rodr√≠guez, Miriam",
+                "affiliation": "Instituto Aragon√©s de Ciencias de la Salud (IACS)",
                 "id": "0000-0001-9365-4342"
             }
         ],
         "keywords": [
             "indicadores",
             "atlasvpm",
-            "cardiologÌa",
-            "atenciÛn primaria",
-            "atenciÛn especializada",
-            "variaciones en la pr·ctica mÈdica"
+            "cardiolog√≠a",
+            "atenci√≥n primaria",
+            "variaciones en la pr√°ctica m√©dica",
+            "atenci√≥n especializada"
         ],
-        "description": "Estudio de las variaciones a nivel de ·rea sanitaria de la atenciÛn cardiolÛgica en atenciÛn ambulatoria. Este estudio tiene como objetivos especÌficos: a) Definir operativamente un listado de indicadores que describan los cuidados (proceso), el tratamiento farmacÈutico y los resultados intermedios de la atenciÛn a personas con enfermedades cardÌacas crÛnicas, en concreto, cardiopatÌa isquÈmica, insuficiencia cardÌaca congestiva y fibrilaciÛn auricular; b) Especificar el modelo de datos requerido para medir de forma sistem·tica y consistente estos indicadores a nivel de zona b·sica de salud, de conformidad con los datos de vida real disponibles en los sistemas de informaciÛn de salud de las CCAA; c) Describir y cartografiar la variaciÛn geogr·fica de la atenciÛn al paciente cardÌaco por zona b·sica de salud, analizando tambiÈn las diferencias por sexo y por nivel socioeconÛmico; d) Presentar los resultados de monitorizaciÛn de forma interactiva. \n",
-        "notes": "\n",
-        "spatial_coverage": "EspaÒa",
+        "description": "Estudio de las variaciones a nivel de √°rea sanitaria de la atenci√≥n cardiol√≥gica en atenci√≥n ambulatoria. Este estudio tiene como objetivos espec√≠ficos:\na) Definir operativamente un listado de indicadores que describan los cuidados (proceso), el tratamiento farmac√©utico y los resultados intermedios de la atenci√≥n a personas con enfermedades card√≠acas cr√≥nicas, en concreto, cardiopat√≠a isqu√©mica, insuficiencia card√≠aca congestiva y fibrilaci√≥n auricular; b) Especificar el modelo de datos requerido para medir de forma sistem√°tica y consistente estos indicadores a nivel de zona b√°sica de salud, de conformidad con los datos de vida real disponibles en los sistemas de informaci√≥n de salud de las CCAA; c) Describir y cartografiar la variaci√≥n geogr√°fica de la atenci√≥n al paciente card√≠aco por zona b√°sica de salud, analizando tambi√©n las diferencias por sexo y por nivel socioecon√≥mico; d) Presentar los resultados de monitorizaci√≥n de forma interactiva.",
+        "notes": "0.0.1 primera versi√≥n de modelo com√∫n de datos\n0.0.2 primera versi√≥n del modelo com√∫n de datos siguiendo el est√°ndar 'cdmb'\n0.0.3 actualizaci√≥n con correcciones m√≠nimas en los metadatos y en la descripci√≥n y criterios de inclusi√≥n de la cohorte\n0.0.4 actualizaci√≥n con correcciones m√≠nimas criterios de exclusi√≥n de la cohorte. En la pesta√±a 'cohort_definition_inclusion' se a√±aden los puntos en la columna code para icd-10 (lo mismo en la pesta√±a 'paciente_enfermedad_cd'). En la entidad 'paciente' y 'poblaci√≥n' cambios en las variables: zbs_residencia_cd, edad_nm, nivel_copago_cd (ver columna 'observations_comments').",
+        "spatial_coverage": "Espa√±a",
         "license": "CC BY 4.0 https://creativecommons.org/licenses/by/4.0/"
     },
     "cohort": {
         "name": "enf_cardiovascular_cronica",
-        "description": "Adultos con tarjeta sanitaria activa a 31 de diciembre del aÒo de estudio con diagnÛstico de enfermedad cardiolÛgica crÛnica antes del 1 de enero del aÒo de estudio, en concreto, enfermedad isquÈmica coronaria, insuficiencia cardÌaca congestiva, o fibrilaciÛn auricular en las CCAA participantes durante el periodo de estudio (2023) \n",
-        "inclusion_criteria": "Cualquier persona igual o mayor de 18 aÒos con tarjeta sanitaria activa el 31 de diciembres del aÒo de estudio (2023) con episodio abierto en atenciÛn primaria de enfermedad isquÈmica coronaria, insuficiencia cardiaca congestiva o fibrilaciÛn auricular antes del 1 de enero del aÒo 2023 (aÒo de estudio), o que haya tenido una visita a urgencias hospitalarias o un ingreso hospitalario con un diagnÛstico (d1-d20) de cualquiera de estas condiciones en los 5 aÒos previos (2018-2022) \n",
-        "exclusion_criteria": "Personas sin tarjeta sanitaria\nPersonas fallecidas durante el aÒo de estudio\nPersonas que no tuvieron ning˙n contacto con los servicios sanitarios durante el aÒo de estudio",
+        "description": "Adultos con tarjeta sanitaria activa a 31 de diciembre del a√±o de estudio con diagn√≥stico de enfermedad cardiol√≥gica cr√≥nica antes del 1 de enero del a√±o de estudio, en concreto, enfermedad isqu√©mica coronaria, insuficiencia card√≠aca congestiva, o fibrilaci√≥n auricular en las CCAA participantes durante el periodo de estudio (2023)\n\n\n",
+        "inclusion_criteria": "Cualquier persona igual o mayor de 18 a√±os con tarjeta sanitaria activa el 31 de diciembres del a√±o de estudio (2023) con episodio abierto en atenci√≥n primaria de enfermedad isqu√©mica coronaria, insuficiencia cardiaca congestiva o fibrilaci√≥n auricular antes del 1 de enero del a√±o 2023 (a√±o de estudio), o que haya tenido una visita a urgencias hospitalarias o un ingreso hospitalario con un diagn√≥stico (d1-d20) de cualquiera de estas condiciones en los 5 a√±os previos (2018-2022)\n\n",
+        "exclusion_criteria": "Personas sin tarjeta sanitaria\nPersonas fallecidas durante el a√±o de estudio",
         "beggining_study_period": "2023-01-01",
         "end_study_period": "2023-12-31",
         "cohort_definition_inclusion": {
@@ -77,7 +77,7 @@
     },
     "entities": [
         {
-            "uuid": "e7de5c3d-f3bf-4719-8d53-b607d8aaaa67",
+            "uuid": "e635973a-3ea5-47d9-af73-b2770e3f3a4c",
             "name": "paciente",
             "time_varying": false,
             "variables": [
@@ -91,7 +91,7 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "AplicaciÛn de un algoritmo de pseudonimizaciÛn (i.e., SHA-256)",
+                    "transformations_from_origin": "Aplicaci√≥n de un algoritmo de pseudonimizaci√≥n (i.e., SHA-256)",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
                     "observations_comments": "",
                     "examples": "",
@@ -99,7 +99,7 @@
                 },
                 {
                     "label": "enfermedad_cd",
-                    "description": "Enfermedad cardÌaca crÛnica por la que el paciente es seleccionado en la cohorte (i.e. EIC, ICC, FA)",
+                    "description": "Enfermedad card√≠aca cr√≥nica por la que el paciente es seleccionado en la cohorte (i.e. EIC, ICC, FA)",
                     "standard_classification": "ciap-1, ciap-2, icd-9-mc-es, icd-10-mc-es",
                     "format": "String",
                     "type": "Categorical",
@@ -107,9 +107,9 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": true,
-                    "transformations_from_origin": "{1 = 'Enfermedad isquÈmica cardÌaca (EIC); 2 = 'Insuficiencia cardÌaca congestiva (ICC)'; 3 = 'FibrilaciÛn auricular (FA)'}",
-                    "possible_data_source": "M˙ltiples fuentes: EHR AP, PCH-URG, CMBD",
-                    "observations_comments": "Variable calculada a partir de la identificaciÛn de diagnÛsticos incluidos en el cat·logo 'paciente_enfermedad_cd'",
+                    "transformations_from_origin": "{1 = 'Enfermedad isqu√©mica card√≠aca (EIC); 2 = 'Insuficiencia card√≠aca congestiva (ICC)'; 3 = 'Fibrilaci√≥n auricular (FA)'}",
+                    "possible_data_source": "M√∫ltiples fuentes: EHR AP, PCH-URG, CMBD",
+                    "observations_comments": "Variable calculada a partir de la identificaci√≥n de diagn√≥sticos incluidos en el cat√°logo 'paciente_enfermedad_cd'",
                     "examples": "",
                     "catalog": {
                         "column_name": "enfermedad_cd",
@@ -118,23 +118,23 @@
                 },
                 {
                     "label": "zbs_residencia_cd",
-                    "description": "Zona b·sica de salud de residencia del paciente",
-                    "standard_classification": "Cat·logo de Centros de AtenciÛn Primaria SNS (Ministerio de Sanidad)",
+                    "description": "Zona b√°sica de salud de residencia del paciente",
+                    "standard_classification": "Cat√°logo de Centros de Atenci√≥n Primaria SNS (Ministerio de Sanidad)",
                     "format": "String",
                     "type": "Categorical",
                     "units": "",
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "Se requiere consistencia entre los cÛdigos de ZBS de los datos de paciente y las poblaciones",
+                    "transformations_from_origin": "Se requiere consistencia entre los c√≥digos de ZBS de los datos de paciente y las poblaciones",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "La ZBS se captura en el momento de seleccionar el individuo para su inclusiÛn en la cohorte",
+                    "observations_comments": "La ZBS de residencia a 31/12/2022",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "ccaa_cd",
-                    "description": "Comunidad autÛnoma de residencia del paciente",
+                    "description": "Comunidad aut√≥noma de residencia del paciente",
                     "standard_classification": "NUTS-2",
                     "format": "String",
                     "type": "Categorical",
@@ -142,7 +142,7 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": true,
-                    "transformations_from_origin": "Mapear a cÛdigo NUTS-2",
+                    "transformations_from_origin": "Mapear a c√≥digo NUTS-2",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
                     "observations_comments": "",
                     "examples": "ESXX",
@@ -163,7 +163,7 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "El sexo se captura en el momento de seleccionar el individuo para su inclusiÛn en la cohorte",
+                    "observations_comments": "El sexo se captura en el momento de seleccionar el individuo para su inclusi√≥n en la cohorte",
                     "examples": "",
                     "catalog": null
                 },
@@ -173,19 +173,19 @@
                     "standard_classification": "",
                     "format": "Integer",
                     "type": "Numerical",
-                    "units": "aÒos",
+                    "units": "aÔøΩos",
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "Calcular a partir de la fecha de inclusiÛn del individuo en la cohorte y su fecha de nacimiento",
+                    "transformations_from_origin": "Calcular a partir de la fecha de inclusi√≥n del individuo en la cohorte y su fecha de nacimiento",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "La edad se captura en el momento de seleccionar el individuo para su inclusiÛn en la cohorte",
+                    "observations_comments": "Edad a 31/12/2022",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "nivel_copago_cd",
-                    "description": "CategorÌas del nivel de copago ",
+                    "description": "Categor√≠as del nivel de copago ",
                     "standard_classification": "RDL16/2012 (BOE-A-2012-5403)",
                     "format": "String",
                     "type": "Categorical",
@@ -193,9 +193,9 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "{0 = '<18.000Ä'; 1 = '>=18.000Ä' ; 2 = 'Desconocido'}",
+                    "transformations_from_origin": "{0 = '<18.000‚Ç¨'; 1 = '>=18.000‚Ç¨' ; 2 = 'Desconocido'}",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "Calculada a partir de la TSI del paciente",
+                    "observations_comments": "Calculada a partir de la TSI a 31/12/2022",
                     "examples": "",
                     "catalog": null
                 }
@@ -224,13 +224,13 @@
             ]
         },
         {
-            "uuid": "9934b638-19a9-4bc8-b6ac-43ab0a155f09",
+            "uuid": "9fda3704-eb0d-4cb8-b9ea-c7d517157f9d",
             "name": "poblacion",
             "time_varying": false,
             "variables": [
                 {
-                    "label": "aÒo_cd",
-                    "description": "AÒo en el que se especifica la poblaciÛn por ZBS",
+                    "label": "a√±o_cd",
+                    "description": "A√±o en el que se especifica la poblaci√≥n por ZBS",
                     "standard_classification": "ISO 8601",
                     "format": "String",
                     "type": "Categorical",
@@ -240,13 +240,13 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "'2022'",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "El aÒo ser· siempre 2022 dentro del alcance de este estudio",
+                    "observations_comments": "El a√±o ser√° siempre 2022 dentro del alcance de este estudio",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "ccaa_cd",
-                    "description": "Comunidad autÛnoma a la que pertenece la zona b·sica de salud",
+                    "description": "Comunidad aut√≥noma a la que pertenece la zona b√°sica de salud",
                     "standard_classification": "NUTS-2",
                     "format": "String",
                     "type": "Categorical",
@@ -265,17 +265,17 @@
                 },
                 {
                     "label": "zbs_residencia_cd",
-                    "description": "Zona b·sica de salud de residencia del paciente",
-                    "standard_classification": "Cat·logo de Centros de AtenciÛn Primaria SNS (Ministerio de Sanidad)",
+                    "description": "Zona b√°sica de salud de residencia del paciente",
+                    "standard_classification": "Cat√°logo de Centros de Atenci√≥n Primaria SNS (Ministerio de Sanidad)",
                     "format": "String",
                     "type": "Categorical",
                     "units": "",
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "Se requiere consistencia entre los cÛdigos de ZBS de los datos de paciente y las poblaciones",
+                    "transformations_from_origin": "Se requiere consistencia entre los c√≥digos de ZBS de los datos de paciente y las poblaciones",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "La ZBS se captura en el momento de seleccionar el individuo para su inclusiÛn en la cohorte",
+                    "observations_comments": "La ZBS de residencia a 31/12/2022",
                     "examples": "",
                     "catalog": null
                 },
@@ -305,15 +305,15 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "{0 = '0-4 aÒos'; 1 = '5-9 aÒos'; 2 = '10-14 aÒos'; ...}",
-                    "possible_data_source": "La ZBS se captura en el momento de seleccionar el individuo para su inclusiÛn en la cohorte",
+                    "transformations_from_origin": "{0 = '0-4 a√±os'; 1 = '5-9 a√±os'; 2 = '10-14 a√±os'; ...}",
+                    "possible_data_source": "",
                     "observations_comments": "Calculada a partir de la edad de las personas con tarjeta sanitaria adscritas a cada ZBS",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "nivel_copago_cd",
-                    "description": "CategorÌa de copago ",
+                    "description": "Categor√≠a de copago ",
                     "standard_classification": "RDL16/2012 (BOE-A-2012-5403)",
                     "format": "String",
                     "type": "Categorical",
@@ -321,15 +321,15 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "{0 ='<18.000Ä'; 1 = '>=18.000Ä'; 2 = 'Desconocido'}",
+                    "transformations_from_origin": "{0 ='<18.000‚Ç¨'; 1 = '>=18.000‚Ç¨'; 2 = 'Desconocido'}",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "Calculada a partir de la TSI de las personas con tarjeta sanitaria adscritas a cada ZBS (poblaciÛn)",
+                    "observations_comments": "Calculada a partir de la TSI a 31/12/2022 de las personas con tarjeta sanitaria adscritas a cada ZBS (poblaci√≥n)",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "poblacion_nm",
-                    "description": "Numero de residentes con tarjeta sanitarias adscritos a una ZBS (poblaciÛn ZBS)",
+                    "description": "Numero de residentes con tarjeta sanitarias adscritos a una ZBS (poblaci√≥n ZBS)",
                     "standard_classification": "",
                     "format": "Integer",
                     "type": "Numerical",
@@ -337,18 +337,18 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "Sumatorio de personas con tarjeta sanitaria adscritas a cada ZBS (poblaciÛn) por cada uno de los estratos configurados por las variables anteriores",
+                    "transformations_from_origin": "Sumatorio de personas con tarjeta sanitaria adscritas a cada ZBS (poblaci√≥n) por cada uno de los estratos configurados por las variables anteriores",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "PoblaciÛn por zona b·sica de salud y aÒo, estratificada por sexo, grupo quinquenal de edad y nivel de copago (3 niveles)",
+                    "observations_comments": "Poblaci√≥n por zona b√°sica de salud y a√±o, estratificada por sexo, grupo quinquenal de edad y nivel de copago (3 niveles)",
                     "examples": "",
                     "catalog": null
                 }
             ],
             "rules": [
                 {
-                    "expression": "aÒo_cd BETWEEN 2013 AND 2022",
-                    "name": "aÒo_cd",
-                    "description": "Rule for column aÒo_cd"
+                    "expression": "a√±o_cd BETWEEN 2013 AND 2022",
+                    "name": "a√±o_cd",
+                    "description": "Rule for column a√±o_cd"
                 },
                 {
                     "expression": "grupo_edad_cd BETWEEN 1 AND 18",
@@ -368,7 +368,7 @@
             ]
         },
         {
-            "uuid": "435fe4ce-86f2-45a2-83be-dc8aa9261ce3",
+            "uuid": "ac404493-260f-45ac-9664-528e2a51de08",
             "name": "test",
             "time_varying": false,
             "variables": [
@@ -384,13 +384,13 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "algoritmo pseudonimizacion",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "Cada paciente tendr· tantos registros de test como mediciones realizadas a lo largo del periodo de estudio",
+                    "observations_comments": "Cada paciente tendr√° tantos registros de test como mediciones realizadas a lo largo del periodo de estudio",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "test_dt",
-                    "description": "Fecha en la que se realizÛ el test",
+                    "description": "Fecha en la que se realiz√≥ el test",
                     "standard_classification": "ISO 8601",
                     "format": "Date",
                     "type": "Date",
@@ -399,14 +399,14 @@
                     "characteristic": "Observed",
                     "catalog_bl": false,
                     "transformations_from_origin": "",
-                    "possible_data_source": "Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
+                    "possible_data_source": "Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
                     "observations_comments": "",
                     "examples": "2022-01-02",
                     "catalog": null
                 },
                 {
                     "label": "test_cd",
-                    "description": "DenominaciÛn del test que se le ha hecho al paciente",
+                    "description": "Denominaci√≥n del test que se le ha hecho al paciente",
                     "standard_classification": "UTF-8",
                     "format": "String",
                     "type": "Categorical",
@@ -414,8 +414,8 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "{'pad' = 'PresiÛn Arterial DiastÛlica (mmHg)'; 'pas' = 'PresiÛn Arterial SistÛlica (mmHg)'; 'pn' = 'PÈpitido natriurÈtico (BNP y NT-proBNP)'; 'ldl' = 'Colesterol LDL (mg/dL)'}",
-                    "possible_data_source": "Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
+                    "transformations_from_origin": "{'pad' = 'Presi√≥n Arterial Diast√≥lica (mmHg)'; 'pas' = 'Presi√≥n Arterial Sist√≥lica (mmHg)'; 'pn' = 'P√©pitido natriur√©tico (BNP y NT-proBNP)'; 'ldl' = 'Colesterol LDL (mg/dL)'}",
+                    "possible_data_source": "Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
                     "observations_comments": "",
                     "examples": "pad",
                     "catalog": null
@@ -431,8 +431,8 @@
                     "characteristic": "Observed",
                     "catalog_bl": false,
                     "transformations_from_origin": "",
-                    "possible_data_source": "Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
-                    "observations_comments": "Verificar que las unidades de los resultados son consistente con las unidades especificadas para cada test (mediciÛn)",
+                    "possible_data_source": "Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
+                    "observations_comments": "Verificar que las unidades de los resultados son consistente con las unidades especificadas para cada test (medici√≥n)",
                     "examples": "90",
                     "catalog": null
                 }
@@ -440,7 +440,7 @@
             "rules": []
         },
         {
-            "uuid": "a68f39eb-f438-49ff-bfd9-8262767dd178",
+            "uuid": "47605ef9-1706-47db-9ece-d579a0c3028b",
             "name": "examenes",
             "time_varying": false,
             "variables": [
@@ -456,13 +456,13 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "algoritmo pseudonimizacion",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "Cada paciente tendr· tantos registros como ex·menes/intervenciones se le hayan realizado durante el periodo de estudio",
+                    "observations_comments": "Cada paciente tendr√° tantos registros como ex√°menes/intervenciones se le hayan realizado durante el periodo de estudio",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "examen_dt",
-                    "description": "Fecha en la que se realizÛ el examen ",
+                    "description": "Fecha en la que se realiz√≥ el examen ",
                     "standard_classification": "ISO 8601",
                     "format": "Date",
                     "type": "Date",
@@ -471,14 +471,14 @@
                     "characteristic": "Observed",
                     "catalog_bl": false,
                     "transformations_from_origin": "YYYY-MM-DD",
-                    "possible_data_source": "Historia ClÌnica ElectrÛnica AtenciÛn Primaria (i.e., OMI-AP)",
+                    "possible_data_source": "Historia Cl√≠nica Electr√≥nica Atenci√≥n Primaria (i.e., OMI-AP)",
                     "observations_comments": "",
                     "examples": "2022-01-02",
                     "catalog": null
                 },
                 {
                     "label": "examen_cd",
-                    "description": "DenominaciÛn del examen (prueba) realizado al paciente",
+                    "description": "Denominaci√≥n del examen (prueba) realizado al paciente",
                     "standard_classification": "UTF-8",
                     "format": "String",
                     "type": "Categorical",
@@ -486,15 +486,15 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "{'ecocardio' = 'ecocardiograma'; 'fevi' = 'DeterminaciÛn fracciÛn eyecciÛn ventrÌculo izq.'; 'chads' = 'EvaluaciÛn escala CHADS2Vasc'; 'vacuna_gripe' = 'VacunaciÛn antigripal'}",
-                    "possible_data_source": "Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
+                    "transformations_from_origin": "{'ecocardio' = 'ecocardiograma'; 'fevi' = 'Determinaci√≥n fracci√≥n eyecci√≥n ventr√≠culo izq.'; 'chads' = 'Evaluaci√≥n escala CHADS2Vasc'; 'vacuna_gripe' = 'Vacunaci√≥n antigripal'}",
+                    "possible_data_source": "Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
                     "observations_comments": "Los resultados deben ser consistentes con la prueba realizada",
                     "examples": "ecocardio",
                     "catalog": null
                 },
                 {
                     "label": "examen_resultado_cd",
-                    "description": "Resultado (valor) del examen/intervenciÛn realizada al paciente",
+                    "description": "Resultado (valor) del examen/intervenci√≥n realizada al paciente",
                     "standard_classification": "",
                     "format": "String",
                     "type": "Categorical",
@@ -503,7 +503,7 @@
                     "characteristic": "Calculated",
                     "catalog_bl": false,
                     "transformations_from_origin": "En el caso de 'ecocardiograma' y 'vacuna_gripe' el resultado esperado es 'realizada', mientras que para 'fevi' y 'chads' se espera el valor del resultado como texto",
-                    "possible_data_source": "Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
+                    "possible_data_source": "Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
                     "observations_comments": "Los resultados deben ser consistentes con la prueba realizada",
                     "examples": "realizada",
                     "catalog": null
@@ -518,7 +518,7 @@
             ]
         },
         {
-            "uuid": "7d279388-8d2c-4979-bd5f-851bccfc8150",
+            "uuid": "27a18d35-7f5f-4bb3-acd0-08c6648b6c02",
             "name": "tratamiento",
             "time_varying": false,
             "variables": [
@@ -534,13 +534,13 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "algoritmo pseudonimizacion",
                     "possible_data_source": "Base de Datos de Usuario (BDU)",
-                    "observations_comments": "Cada paciente tendr· tantos registros de tratamiento como prescripciones activas tenga en el aÒo de estudio",
+                    "observations_comments": "Cada paciente tendr√° tantos registros de tratamiento como prescripciones activas tenga en el a√±o de estudio",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "fecha_inicio_prescripcion_dt",
-                    "description": "Fecha de inicio de prescripciÛn",
+                    "description": "Fecha de inicio de prescripci√≥n",
                     "standard_classification": "ISO-8601",
                     "format": "Date",
                     "type": "Date",
@@ -549,14 +549,14 @@
                     "characteristic": "Observed",
                     "catalog_bl": false,
                     "transformations_from_origin": "YYYY-MM-DD",
-                    "possible_data_source": "Receta electrÛnica (i.e., e-Receta) o Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
+                    "possible_data_source": "Receta electr√≥nica (i.e., e-Receta) o Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
                     "observations_comments": "",
                     "examples": "2022-01-02",
                     "catalog": null
                 },
                 {
                     "label": "fecha_fin_prescripcion_dt",
-                    "description": "Fecha de fin de la prescripciÛn",
+                    "description": "Fecha de fin de la prescripci√≥n",
                     "standard_classification": "ISO-8601",
                     "format": "Date",
                     "type": "Date",
@@ -565,14 +565,14 @@
                     "characteristic": "Observed",
                     "catalog_bl": false,
                     "transformations_from_origin": "YYYY-MM-DD",
-                    "possible_data_source": "Receta electrÛnica (i.e., e-Receta) o Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
+                    "possible_data_source": "Receta electr√≥nica (i.e., e-Receta) o Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
                     "observations_comments": "",
                     "examples": "",
                     "catalog": null
                 },
                 {
                     "label": "atc_tratamiento_cd",
-                    "description": "CÛdigo de tratamiento ATC",
+                    "description": "C√≥digo de tratamiento ATC",
                     "standard_classification": "UTF-8",
                     "format": "String",
                     "type": "Categorical",
@@ -581,8 +581,8 @@
                     "characteristic": "Observed",
                     "catalog_bl": true,
                     "transformations_from_origin": "",
-                    "possible_data_source": "Receta electrÛnica (i.e., e-Receta) o Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
-                    "observations_comments": "En el cat·logo de cÛdigos ATC de medicamentos relevantes se incluye su indicaciÛn seg˙n condiciÛn de estudio de interÈs para este trabajo, en el campo 'enfermedad_st'",
+                    "possible_data_source": "Receta electr√≥nica (i.e., e-Receta) o Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
+                    "observations_comments": "En el cat√°logo de c√≥digos ATC de medicamentos relevantes se incluye su indicaci√≥n seg√∫n condici√≥n de estudio de inter√©s para este trabajo, en el campo 'enfermedad_st'",
                     "examples": "",
                     "catalog": {
                         "column_name": "code_clean",
@@ -604,7 +604,7 @@
             ]
         },
         {
-            "uuid": "eb9d54a3-209d-44dd-bc69-e1c3e63b8e63",
+            "uuid": "fc1ce49e-d715-4801-8b49-ad781499e77c",
             "name": "comorbilidad",
             "time_varying": false,
             "variables": [
@@ -620,7 +620,7 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "algoritmo pseudonimizacion",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "Cada paciente tiene tantos registros como comorbilidades estÈn presentes en el momento de entrar en la cohorte",
+                    "observations_comments": "Cada paciente tiene tantos registros como comorbilidades est√©n presentes en el momento de entrar en la cohorte",
                     "examples": "",
                     "catalog": null
                 },
@@ -635,7 +635,7 @@
                     "characteristic": "Calculated",
                     "catalog_bl": true,
                     "transformations_from_origin": "{1 = 'IAM'; 2 = 'Diabetes'}",
-                    "possible_data_source": "Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
+                    "possible_data_source": "Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
                     "observations_comments": "Pacientes con episodio de AP abierto de cualquiera de estas comorbilidades ",
                     "examples": "",
                     "catalog": {
@@ -654,8 +654,8 @@
                     "characteristic": "Observed",
                     "catalog_bl": false,
                     "transformations_from_origin": "YYYY-MM-DD",
-                    "possible_data_source": "Historia ClÌnica ElectrÛnica de AtenciÛn Primaria (i.e., OMI-AP)",
-                    "observations_comments": "La fecha de diagnÛstico de las comorbilidades debe ser estrictamente anterior a la fecha de inicio del periodo de estudio ('fecha_diag_comorbilidad_dt' < 2022-01-01)",
+                    "possible_data_source": "Historia Cl√≠nica Electr√≥nica de Atenci√≥n Primaria (i.e., OMI-AP)",
+                    "observations_comments": "La fecha de diagn√≥stico de las comorbilidades debe ser estrictamente anterior a la fecha de inicio del periodo de estudio ('fecha_diag_comorbilidad_dt' < 2022-01-01)",
                     "examples": "",
                     "catalog": null
                 }
