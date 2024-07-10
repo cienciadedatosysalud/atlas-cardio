@@ -16,6 +16,8 @@ graph ER {
 	paciente_edad_nm -- paciente [len=1.5]
 	paciente_nivel_copago_cd [label=nivel_copago_cd fontsize="8pt"]
 	paciente_nivel_copago_cd -- paciente [len=1.5]
+	paciente_fecha_enfermedad_dt [label=fecha_enfermedad_dt fontsize="8pt"]
+	paciente_fecha_enfermedad_dt -- paciente [len=2.1]
 	node [shape=box]
 	poblacion [fontsize="10pt"]
 	node [shape=ellipse]
