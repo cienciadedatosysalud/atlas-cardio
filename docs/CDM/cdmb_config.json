@@ -1,16 +1,16 @@
 {
-    "created_dt": "20240710103454_cdmb",
-    "cdmb_version": "1.3.6",
-    "uuid": "5554b4df-f50c-4c17-bd48-d563b8c9e249",
+    "created_dt": "20240927112601_cdmb",
+    "cdmb_version": "1.3.7",
+    "uuid": "2fd29ec4-ba6a-4de0-b2c3-29f6f64c4627",
     "metadata": {
-        "uuid": "9179df47-6812-4b8b-919b-90501afbb499",
+        "uuid": "2bd37d31-7b37-4cc1-849d-39e1a5edbbfc",
         "project": "AtlasVPM Cardio: Cuidados Ambulatorios en Enfermedad Cardíaca",
         "funder": "Proyecto financiado por la colaboración AtlasVPM mediante convenio con la Sociedad Española de Cardiología",
         "url_project": "www.atlasvpm.org",
         "work_package": "1",
         "use_case": "atlasvpm_cardio",
         "document": "Modelo común de datos",
-        "version_sem": "0.0.5",
+        "version_sem": "0.1.0",
         "authors": [
             {
                 "name": "Bernal-Delgado, Enrique (Investigador Principal)",
@@ -57,27 +57,27 @@
             "atención especializada"
         ],
         "description": "Estudio de las variaciones a nivel de área sanitaria de la atención cardiológica en atención ambulatoria. Este estudio tiene como objetivos específicos:\na) Definir operativamente un listado de indicadores que describan los cuidados (proceso), el tratamiento farmacéutico y los resultados intermedios de la atención a personas con enfermedades cardíacas crónicas, en concreto, cardiopatía isquémica, insuficiencia cardíaca congestiva y fibrilación auricular; b) Especificar el modelo de datos requerido para medir de forma sistemática y consistente estos indicadores a nivel de zona básica de salud, de conformidad con los datos de vida real disponibles en los sistemas de información de salud de las CCAA; c) Describir y cartografiar la variación geográfica de la atención al paciente cardíaco por zona básica de salud, analizando también las diferencias por sexo y por nivel socioeconómico; d) Presentar los resultados de monitorización de forma interactiva.",
-        "notes": "0.0.1 primera versión de modelo común de datos\n0.0.2 primera versión del modelo común de datos siguiendo el estándar 'cdmb'\n0.0.3 actualización con correcciones mínimas en los metadatos y en la descripción y criterios de inclusión de la cohorte\n0.0.4 actualización con correcciones mínimas criterios de exclusión de la cohorte. En la pestaña 'cohort_definition_inclusion' se añaden los puntos en la columna code para icd-10 (lo mismo en la pestaña 'paciente_enfermedad_cd'). En la entidad 'paciente' y 'población' cambios en las variables: zbs_residencia_cd, edad_nm, nivel_copago_cd (ver columna 'observations_comments').\n0.0.5 Se añade la variable 'fecha_enfermedad_dt' a la entidad paciente (pestaña 'paciente'). Se actualiza la columna 'transformations_from_origin' de la variable 'test_cd' (pestaña 'test_cd') y 'examen_cd' (pestaña 'examenes'). Se elimina la columna 'enfermedad_st' en la pestaña 'tratamiento_atc_tratamiento_cd' y del catálogo correspondiente.",
+        "notes": "0.0.1 primera versión de modelo común de datos\n0.0.2 primera versión del modelo común de datos siguiendo el estándar 'cdmb'\n0.0.3 actualización con correcciones mínimas en los metadatos y en la descripción y criterios de inclusión de la cohorte\n0.0.4 actualización con correcciones mínimas criterios de exclusión de la cohorte. En la pestaña 'cohort_definition_inclusion' se añaden los puntos en la columna code para icd-10 (lo mismo en la pestaña 'paciente_enfermedad_cd'). En la entidad 'paciente' y 'población' cambios en las variables: zbs_residencia_cd, edad_nm, nivel_copago_cd (ver columna 'observations_comments').\n0.0.5 Se añade la variable 'fecha_enfermedad_dt' a la entidad paciente (pestaña 'paciente'). Se actualiza la columna 'transformations_from_origin' de la variable 'test_cd' (pestaña 'test_cd') y 'examen_cd' (pestaña 'examenes'). Se elimina la columna 'enfermedad_st' en la pestaña 'tratamiento_atc_tratamiento_cd' y del catálogo correspondiente.\n0.1.0 Se amplia la cohorte ",
         "spatial_coverage": "España",
         "license": "CC BY 4.0 https://creativecommons.org/licenses/by/4.0/"
     },
     "cohort": {
         "name": "enf_cardiovascular_cronica",
-        "description": "Adultos con tarjeta sanitaria activa a 31 de diciembre del año de estudio con diagnóstico de enfermedad cardiológica crónica antes del 1 de enero del año de estudio, en concreto, enfermedad isquémica coronaria, insuficiencia cardíaca congestiva, o fibrilación auricular en las CCAA participantes durante el periodo de estudio (2023)\n\n\n",
-        "inclusion_criteria": "Cualquier persona igual o mayor de 18 años con tarjeta sanitaria activa el 31 de diciembres del año de estudio (2023) con episodio abierto en atención primaria de enfermedad isquémica coronaria, insuficiencia cardiaca congestiva o fibrilación auricular antes del 1 de enero del año 2023 (año de estudio), o que haya tenido una visita a urgencias hospitalarias o un ingreso hospitalario con un diagnóstico (d1-d20) de cualquiera de estas condiciones en los 5 años previos (2018-2022)\n\n",
+        "description": "Adultos con tarjeta sanitaria activa a 31 de diciembre del año de estudio con diagnóstico de enfermedad cardiológica crónica hasta el 31 de diciembre del año de estudio, en concreto, enfermedad isquémica coronaria, insuficiencia cardíaca congestiva, o fibrilación auricular en las CCAA participantes durante el periodo de estudio (2023)\n\n\n\n",
+        "inclusion_criteria": "Cualquier persona igual o mayor de 18 años con tarjeta sanitaria activa el 31 de diciembres del año de estudio (2023) con episodio activo en atención primaria de enfermedad isquémica coronaria, insuficiencia cardiaca congestiva o fibrilación auricular hasta el 31 de diciembre del año de estudio (2023), o que haya tenido una visita a urgencias hospitalarias o un ingreso hospitalario con un diagnóstico (d1-d20) de cualquiera de estas condiciones en los 5 años previos (2018-2023)\n\n",
         "exclusion_criteria": "Personas sin tarjeta sanitaria\nPersonas fallecidas durante el año de estudio",
         "beggining_study_period": "2023-01-01",
         "end_study_period": "2023-12-31",
         "cohort_definition_inclusion": {
             "filename": "cohort_definition_inclusion.csv",
             "nature": "Condition",
-            "column_name": "enfermedad_cd"
+            "column_name": "code_clean"
         },
         "cohort_definition_exclusion": null
     },
     "entities": [
         {
-            "uuid": "e4dc5241-114c-4c56-84dc-b995c474640e",
+            "uuid": "47c8533b-3019-4cb2-aa05-1d687a3d694b",
             "name": "paciente",
             "time_varying": false,
             "variables": [
@@ -128,7 +128,7 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "Se requiere consistencia entre los códigos de ZBS de los datos de paciente y las poblaciones",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "La ZBS de residencia a 31/12/2022",
+                    "observations_comments": "La ZBS de residencia a 31/12/2023",
                     "examples": "",
                     "catalog": null
                 },
@@ -179,7 +179,7 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "Calcular a partir de la fecha de inclusión del individuo en la cohorte y su fecha de nacimiento",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "Edad a 31/12/2022",
+                    "observations_comments": "Edad a 31/12/2023",
                     "examples": "",
                     "catalog": null
                 },
@@ -195,7 +195,7 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "{0 = '<18.000€'; 1 = '>=18.000€' ; 2 = 'Desconocido'}",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "Calculada a partir de la TSI a 31/12/2022",
+                    "observations_comments": "Calculada a partir de la TSI a 31/12/2023",
                     "examples": "",
                     "catalog": null
                 },
@@ -228,19 +228,24 @@
                     "description": "Rule for column sexo_cd"
                 },
                 {
-                    "expression": "copago_cd IN ('0', '1', '2')",
-                    "name": "copago_cd",
-                    "description": "Rule for column copago_cd"
+                    "expression": "nivel_copago_cd IN ('0', '1', '2')",
+                    "name": "nivel_copago_cd",
+                    "description": "Rule for column nivel_copago_cd"
                 },
                 {
-                    "expression": "disease_cd IN ('1', '2', '3')",
-                    "name": "disease_cd",
-                    "description": "Rule for column disease_cd"
+                    "expression": "fecha_enfermedad_dt < '2024-01-01'",
+                    "name": "fecha_enfermedad_dt",
+                    "description": "Rule for column fecha_enfermedad_dt"
+                },
+                {
+                    "expression": "enfermedad_cd IN ('1', '2', '3')",
+                    "name": "enfermedad_cd",
+                    "description": "Rule for column enfermedad_cd"
                 }
             ]
         },
         {
-            "uuid": "845f2bb2-e2a0-4b8e-8cd9-51caac636142",
+            "uuid": "4b0ee665-6baa-49e1-8b2b-726847e42e39",
             "name": "poblacion",
             "time_varying": false,
             "variables": [
@@ -254,9 +259,9 @@
                     "requirement_level": "Required",
                     "characteristic": "Observed",
                     "catalog_bl": false,
-                    "transformations_from_origin": "'2022'",
+                    "transformations_from_origin": "'2023'",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "El año será siempre 2022 dentro del alcance de este estudio",
+                    "observations_comments": "El año será siempre 2023 dentro del alcance de este estudio",
                     "examples": "",
                     "catalog": null
                 },
@@ -291,7 +296,7 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "Se requiere consistencia entre los códigos de ZBS de los datos de paciente y las poblaciones",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "La ZBS de residencia a 31/12/2022",
+                    "observations_comments": "La ZBS de residencia a 31/12/2023",
                     "examples": "",
                     "catalog": null
                 },
@@ -339,7 +344,7 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "{0 ='<18.000€'; 1 = '>=18.000€'; 2 = 'Desconocido'}",
                     "possible_data_source": "Base de Datos de Usuarios (BDU)",
-                    "observations_comments": "Calculada a partir de la TSI a 31/12/2022 de las personas con tarjeta sanitaria adscritas a cada ZBS (población)",
+                    "observations_comments": "Calculada a partir de la TSI a 31/12/2023 de las personas con tarjeta sanitaria adscritas a cada ZBS (población)",
                     "examples": "",
                     "catalog": null
                 },
@@ -362,11 +367,6 @@
             ],
             "rules": [
                 {
-                    "expression": "año_cd BETWEEN 2013 AND 2022",
-                    "name": "año_cd",
-                    "description": "Rule for column año_cd"
-                },
-                {
                     "expression": "grupo_edad_cd BETWEEN 1 AND 18",
                     "name": "grupo_edad_cd",
                     "description": "Rule for column grupo_edad_cd"
@@ -377,14 +377,14 @@
                     "description": "Rule for column sexo_cd"
                 },
                 {
-                    "expression": "copago_cd IN ('0', '1', '2')",
-                    "name": "copago_cd",
-                    "description": "Rule for column copago_cd"
+                    "expression": "nivel_copago_cd IN ('0', '1', '2')",
+                    "name": "nivel_copago_cd",
+                    "description": "Rule for column nivel_copago_cd"
                 }
             ]
         },
         {
-            "uuid": "3330ddf3-954c-4447-a566-d950b6feaabd",
+            "uuid": "42fb0578-dbf1-49c4-b3ff-b6d85739e5ad",
             "name": "test",
             "time_varying": false,
             "variables": [
@@ -417,7 +417,7 @@
                     "transformations_from_origin": "",
                     "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
                     "observations_comments": "",
-                    "examples": "2022-01-02",
+                    "examples": "2023-01-02",
                     "catalog": null
                 },
                 {
@@ -453,10 +453,16 @@
                     "catalog": null
                 }
             ],
-            "rules": []
+            "rules": [
+                {
+                    "expression": "test_cd IN ('pad', 'pas', 'pn', 'ldl', 'tsh', 'fg')",
+                    "name": "test_cd",
+                    "description": "Rule for column test_cd"
+                }
+            ]
         },
         {
-            "uuid": "91673e87-4378-4a0b-8e33-5c1c42809516",
+            "uuid": "d537735a-f830-4236-8c59-868706c1e623",
             "name": "examenes",
             "time_varying": false,
             "variables": [
@@ -489,7 +495,7 @@
                     "transformations_from_origin": "YYYY-MM-DD",
                     "possible_data_source": "Historia Clínica Electrónica Atención Primaria (i.e., OMI-AP)",
                     "observations_comments": "",
-                    "examples": "2022-01-02",
+                    "examples": "2023-01-02",
                     "catalog": null
                 },
                 {
@@ -527,19 +533,19 @@
             ],
             "rules": [
                 {
-                    "expression": "exam_dt BETWEEN '2022-01-01' AND '2022-12-31'",
-                    "name": "exam_dt",
-                    "description": "Rule for column exam_dt"
+                    "expression": "examen_cd IN ('ecocardio', 'fevi', 'chads', 'vacuna_gripe', 'HASBLED')",
+                    "name": "examen_cd",
+                    "description": "Rule for column examen_cd"
                 }
             ]
         },
         {
-            "uuid": "acc37935-a22e-4445-b477-40fa258de9ff",
+            "uuid": "d3879cd3-a552-4de2-b0f6-99ac8839d234",
             "name": "tratamiento",
             "time_varying": false,
             "variables": [
                 {
-                    "label": "patiente_id",
+                    "label": "paciente_id",
                     "description": "Pseudoidentificador del paciente",
                     "standard_classification": "UTF-8",
                     "format": "String",
@@ -598,7 +604,7 @@
                     "catalog_bl": true,
                     "transformations_from_origin": "",
                     "possible_data_source": "Receta electrónica (i.e., e-Receta) o Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
-                    "observations_comments": "En el catálogo de códigos ATC de medicamentos relevantes se incluye su indicación según condición de estudio de interés para este trabajo, en el campo 'enfermedad_st'",
+                    "observations_comments": "En el catálogo de códigos ATC de medicamentos relevantes se incluye la familia farmacológica a la que pertenecen en el campo 'familia_st' ",
                     "examples": "",
                     "catalog": {
                         "column_name": "code_clean",
@@ -607,25 +613,15 @@
                 }
             ],
             "rules": [
-                {
-                    "expression": "fecha_inicio_prescripcion <= '2022-12-31'",
-                    "name": "fecha_inicio_prescripcion",
-                    "description": "Rule for column fecha_inicio_prescripcion"
-                },
-                {
-                    "expression": "fecha_final_precripcion>='2022-01-01' AND fecha_inicio_prescripcion <= fecha_final_precripcion",
-                    "name": "fecha_final_precripcion",
-                    "description": "Rule for column fecha_final_precripcion"
-                }
             ]
         },
         {
-            "uuid": "6169f6cc-d2ce-4582-b6d6-ce0380d72012",
+            "uuid": "574168df-60ec-46fe-9126-ea40a572d12f",
             "name": "comorbilidad",
             "time_varying": false,
             "variables": [
                 {
-                    "label": "patiente_id",
+                    "label": "paciente_id",
                     "description": "Pseudoidentificador del paciente",
                     "standard_classification": "UTF-8",
                     "format": "String",
@@ -671,16 +667,16 @@
                     "catalog_bl": false,
                     "transformations_from_origin": "YYYY-MM-DD",
                     "possible_data_source": "Historia Clínica Electrónica de Atención Primaria (i.e., OMI-AP)",
-                    "observations_comments": "La fecha de diagnóstico de las comorbilidades debe ser estrictamente anterior a la fecha de inicio del periodo de estudio ('fecha_diag_comorbilidad_dt' < 2023-01-01)",
+                    "observations_comments": "La fecha de diagnóstico de las comorbilidades ('fecha_diag_comorbilidad_dt' < 2023-12-31)",
                     "examples": "",
                     "catalog": null
                 }
             ],
             "rules": [
                 {
-                    "expression": "fecha_diagnostico_comorbilidad <= '2022-12-31'",
-                    "name": "fecha_diagnostico_comorbilidad",
-                    "description": "Rule for column fecha_diagnostico_comorbilidad"
+                    "expression": "fecha_diag_comorbilidad_dt < '2023-12-31'",
+                    "name": "fecha_diag_comorbilidad_dt",
+                    "description": "Rule for column fecha_diag_comorbilidad_dt"
                 }
             ]
         }
@@ -705,14 +701,14 @@
             "right_entity": "tratamiento",
             "join_type": "LEFT JOIN",
             "left_column": "paciente_id",
-            "right_column": "patiente_id"
+            "right_column": "paciente_id"
         },
         {
             "left_entity": "paciente",
             "right_entity": "comorbilidad",
             "join_type": "LEFT JOIN",
             "left_column": "paciente_id",
-            "right_column": "patiente_id"
+            "right_column": "paciente_id"
         }
     ]
 }

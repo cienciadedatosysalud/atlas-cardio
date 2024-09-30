@@ -1,0 +1,1229 @@
+---
+title: "ATLAS DE CUIDADOS AMBULATORIOS EN ENFERMEDADES CARDÍACAS"
+lang: es
+author:
+  - name: Atlas de variaciones injustificadas de la práctica médica (Atlas VPM)
+    affiliations:
+      - name: Grupo de Ciencia de datos para la investigación en servicios y políticas sanitarias
+      - name: Instituto Aragonés de Ciencias de la Salud (IACS)
+      - name: Instituto de Investigación Sanitaria de Aragón (IIS)
+      - name: Red de Investigación en Cronicidad, Atención Primaria y Prevención y Promoción de la Salud (RICAPPS)
+#date: 
+# bibliography:
+#   - referencias.bib
+format: 
+  html:
+    embed-resources: true
+    toc: true
+    toc-depth: 4
+    highlight-style: pygments
+    code-fold: true
+    html-math-method: katex
+    grid:
+      body-width: 1100px
+execute: 
+  echo: false
+  warning: false
+  cache: false
+---
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+
+```{r}
+#| label: cargar paquetes
+
+library(ggplot2)
+library(dplyr)
+library(purrr)
+library(Hmisc) 
+library(sjmisc)
+library(DBI)
+library(gt)
+library(logger)
+library(epoxy)
+library(plotly)
+library(ggalluvial)
+library(ggrepel)
+library(scales)
+library(stringr)
+library(tidyr)
+library(openxlsx)
+
+options(scipen = 999)
+
+s <- Sys.getenv("PIPELINE_VERSION")
+
+log_info(paste0("Versión de los análisis: ",s))
+```
+
+<p> Versión de los análisis: `r paste0(s)` </p>
+
+
+```{r,output=FALSE}
+#| label: eic tc
+
+database_path <- '../../inputs/data.duckdb'
+
+log_info('Calculando tasas EIC')
+source('./aux_scripts/eic_tc_calc.R')
+
+```
+
+
+
+```{r,output=FALSE}
+#| label: fa tc
+
+database_path <- '../../inputs/data.duckdb'
+
+log_info('Calculando tasas FA')
+source('./aux_scripts/fa_tc_calc.R')
+```
+
+
+# Resultados del Análisis local (CCAA: `r list_ccaa`)
+
+
+```{r,output=FALSE}
+#| label: icc tc
+
+database_path <- '../../inputs/data.duckdb'
+
+log_info('Calculando tasas ICC')
+source('./aux_scripts/icc_tc_calc.R')
+
+
+rm(list=ls())
+```
+
+
+
+## Enfermedad Isquémica Coronaria (EIC)
+
+```{r,output=FALSE}
+
+database_path <- '../../inputs/data.duckdb'
+
+df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70'),
+                      ccaa_st = c('Aragón','Canarias'))
+data <- read.csv('../../outputs/eic_ind_tablas.csv',sep='|')
+
+df_ind <- data.frame(ind = c('eic','eic_gripe','eic_eco','eic_fe','eic_iam','eic_ta','eic_ta_ctrl','eic_ldl',
+                              'eic_ldl70','eic_ldl55','eic_antag_aldo','eic_bbloc','eic_antiagreg','eic_ranol','eic_trimet','eic_nitra','eic_bloc_ca',
+                              'eic_sra','eic_hipolip','eic_dm2','eic_isglt2','eic_dm2_isglt2','eic_glp1','eic_dm2_glp1'),
+                     desc = c('Enfermedad isquémica cardiaca \n (EIC) en la población mayor de 18 años',
+                              'Población con EIC \n vacunada de la gripe',
+                              'Población con EIC \n y ecocardiograma',
+                              'Población con EIC \n y determinación/registro de la fracción de eyección',
+                              'Población con EIC \n e infarto de miocardio previo',
+                              'Población con EIC \n y registro de tensión arterial (TA)',
+                              'Población con EIC \n y TA <140/90 mmHg (en la última determinación)',
+                              'Población con EIC \n y determinación de colesterol LDL',
+                              'Población con EIC \n y determinación de colesterol LDL menor de 70 mg/dl', 
+                              'Población con EIC \n y determinación de colesterol LDL menor de 55 mg/dl',
+                              'Población con EIC \n y prescripción de antagonistas de la aldosterona',
+                              'Población con EIC \n y prescripción de betabloqueantes',
+                              'Población con EIC \n y prescripción de antiagregantes',
+                              'Población con EIC \n y prescripción de ranolazina',
+                              'Población con EIC \n y prescripción de trimetazidina',
+                              'Población con EIC \n y prescripción de nitratos',
+                              'Población con EIC \n y prescripción de bloqueantes del canal de calcio',
+                              'Población con EIC \n y prescripción de agentes activos sobre el sistema renina-angiotensina',
+                              'Población con EIC \n y prescripción de hipolipemiantes',
+                              'Población con EIC \n y diabetes',
+                              'Población con EIC \n con prescripción de iSGLT2',
+                              'Población con EIC \n y diabetes con prescripción de iSGLT2',
+                              'Población con EIC \n con prescripción de arGLP-1',
+                              'Población con EIC \n y diabetes con prescripción de arGLP-1'))
+
+
+
+df_eic_ccaa <- data %>% filter(ind %in% 'eic',tipo_analisis %in% 1) 
+
+n_casos <- sum(df_eic_ccaa$n_casos_zbs)
+n_pobla <- sum(df_eic_ccaa$n_pobla_zbs)
+perc <- round(100*(n_casos/n_pobla),2)
+df_ccaa_ <- df_ccaa %>% filter(ccaa_cd %in% unique(df_eic_ccaa$ccaa_cd))
+```
+
+
+::: {.callout-tip appearance="simple"}
+
+```{epoxy}
+En {df_ccaa_$ccaa_st} se registraron {n_casos} pacientes con Enfermedad Isquémica Coronaria (EIC), es decir un {perc}% de la población usuaria mayor de 18 años.
+```
+:::
+
+::: {.panel-tabset}
+
+
+### Cuidados ambulatorios 
+
+#### Casos totales
+
+```{r,fig.width=12, fig.height=7}
+#| label: barras eic cuidados
+
+cuidados <- c('eic','eic_gripe','eic_eco','eic_fe','eic_iam','eic_ta','eic_ta_ctrl','eic_ldl',
+                              'eic_ldl70','eic_ldl55')
+
+df_eic_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% cuidados) %>% group_by(ind) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs))
+
+
+df_eic_ccaa <- left_join(df_eic_ccaa,df_ind,by='ind')
+plot <- ggplot(data = df_eic_ccaa, aes(x = reorder(desc,n_casos,decreasing = FALSE), y = n_casos, text = paste("Indicador:", desc, "\nTotal casos:", n_casos))) + 
+  geom_bar(width = 0.9, stat="identity", fill = '#e7cb80') +
+  geom_text(aes(label = n_casos), hjust = 1.0, size = 3,color='gray20')+
+      labs(title = 'Número de casos por indicador', 
+         x = '',
+         y = 'Número de casos') +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 12),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = ' K', accuracy=1))  +
+  coord_flip()
+
+#ggplotly(plot, tooltip = 'text')
+
+plot
+
+```
+
+
+#### Nube de tasas crudas (%) por zonas básica de salud (ZBS)
+
+```{r,fig.width=12, fig.height=7}
+#| label: nube de tasas eic cuidados
+
+df_eic_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% cuidados) %>% group_by(ind) %>% 
+  mutate(median = median(tc_zbs,na.rm=TRUE)) %>% ungroup()
+df_eic_ccaa_ <- df_eic_ccaa %>% group_by(ind,median) %>% summarise(p95_p05 = quantile(tc_zbs, 0.95, na.rm=TRUE)/quantile(tc_zbs, 0.05, na.rm=TRUE))
+
+
+df_eic_ccaa_ <- left_join(df_eic_ccaa_,df_ind,by='ind')
+df_eic_ccaa_$percent <- max(df_eic_ccaa$tc_zbs,na.rm=TRUE)
+
+df_eic_ccaa <- left_join(df_eic_ccaa,df_ind,by='ind')
+
+
+plot <-  ggplot(data = df_eic_ccaa, aes(x = reorder(desc,median,decreasing = FALSE), y=tc_zbs, group = desc)) +
+  geom_violin(trim = FALSE, color = NA, fill = NA) + 
+  #geom_quasirandom(color = '#2e6930', width = 0.2, size = 0.5, alpha = 0.8) +
+  geom_jitter(color = '#2e6930', position=position_jitter(0.15), size=0.5,alpha=0.8) +
+  stat_summary(fun = "median",
+               geom = "crossbar", 
+               linewidth = 0.1,
+               colour = "black") +
+  labs(title='Tasa cruda (%) por zona básica de salud por indicador',
+    x = '',
+    y = 'Tasa cruda (%)') +
+  geom_text_repel(data=df_eic_ccaa_,
+                  aes(x=reorder(desc,median,decreasing=FALSE),y=percent,
+                      label=paste0('P(95)/P(05)=',round(p95_p05,1))),nudge_y=0.5) +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  coord_flip()
+
+plot
+
+
+```
+
+#### Cuidados ambulatorios en hombres y mujeres con enfermedad isquémica coronaria
+
+```{r,fig.width=12, fig.height=7}
+#| label: eic cuidados sexo
+
+
+df_eic_ccaa <- data %>% filter(tipo_analisis %in% c(2,3),ind %in% cuidados) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_eic_ccaa$sexo[df_eic_ccaa$tipo_analisis == 2] <- 'Hombres'
+
+df_eic_ccaa$sexo[df_eic_ccaa$tipo_analisis == 3] <- 'Mujeres'
+
+df_eic_ccaa <- left_join(df_eic_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_eic_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Cuidados ambulatorios en hombres y mujeres con enfermedad isquémica coronaria',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = sexo),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('Hombres' = '#1072b8','Mujeres' = '#e39e54')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size =10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+
+
+
+```
+
+#### Cuidados ambulatorios en población con enfermedad isquémica coronaria con alto y bajo nivel socioeconómico (NSE)
+
+```{r,fig.width=12, fig.height=7}
+#| label: eic cuidados nse
+
+
+df_eic_ccaa <- data %>% filter(tipo_analisis %in% c(4,5),ind %in% cuidados) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_eic_ccaa$nse[df_eic_ccaa$tipo_analisis == 4] <- 'NSE Bajo'
+
+df_eic_ccaa$nse[df_eic_ccaa$tipo_analisis == 5] <- 'NSE Alto'
+
+df_eic_ccaa <- left_join(df_eic_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_eic_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Cuidados ambulatorios en población con enfermedad isquémica coronaria con alto y bajo nivel socioeconómico',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = nse),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('NSE Bajo' = '#1b4ca9','NSE Alto' = '#C70039')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+```
+
+
+
+
+### Prescripción farmacéutica
+
+#### Casos totales
+
+```{r,fig.width=12, fig.height=7}
+#| label: barras eic prescripcion
+
+prescripcion <- c('eic_antag_aldo','eic_bbloc','eic_antiagreg','eic_ranol','eic_trimet','eic_nitra','eic_bloc_ca',
+                              'eic_sra','eic_hipolip','eic_dm2','eic_isglt2','eic_dm2_isglt2','eic_glp1','eic_dm2_glp1')
+
+df_eic_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% prescripcion) %>% group_by(ind) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs))
+
+
+df_eic_ccaa <- left_join(df_eic_ccaa,df_ind,by='ind')
+plot <- ggplot(data = df_eic_ccaa, aes(x = reorder(desc,n_casos,decreasing = FALSE), y = n_casos, text = paste("Indicador:", desc, "\nTotal casos:", n_casos))) + 
+  geom_bar(width = 0.9, stat="identity", fill = '#e7cb80') +
+  geom_text(aes(label = n_casos), hjust = 1.0, size = 3,color='gray20')+
+      labs(title = 'Número de casos por indicador', 
+         x = '',
+         y = 'Número de casos') +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 12),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = ' K', accuracy=1))  +
+  coord_flip()
+
+#ggplotly(plot, tooltip = 'text')
+
+plot
+
+```
+
+
+#### Nube de tasas crudas (%) por zonas básica de salud (ZBS)
+
+```{r,fig.width=12, fig.height=7}
+#| label: nube de tasas eic prescripcion
+
+df_eic_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% prescripcion) %>% group_by(ind) %>% 
+  mutate(median = median(tc_zbs,na.rm=TRUE)) %>% ungroup()
+df_eic_ccaa_ <- df_eic_ccaa %>% group_by(ind,median) %>% summarise(p95_p05 = quantile(tc_zbs, 0.95, na.rm=TRUE)/quantile(tc_zbs, 0.05, na.rm=TRUE))
+
+
+df_eic_ccaa_ <- left_join(df_eic_ccaa_,df_ind,by='ind')
+df_eic_ccaa_$percent <- max(df_eic_ccaa$tc_zbs,na.rm=TRUE)
+df_eic_ccaa <- left_join(df_eic_ccaa,df_ind,by='ind')
+
+plot <-  ggplot(data = df_eic_ccaa, aes(x = reorder(desc,median,decreasing = FALSE), y=tc_zbs, group = desc)) +
+  geom_violin(trim = FALSE, color = NA, fill = NA) + 
+  #geom_quasirandom(color = '#2e6930', width = 0.2, size = 0.5, alpha = 0.8) +
+  geom_jitter(color = '#2e6930', position=position_jitter(0.15), size=0.5,alpha=0.8) +
+  stat_summary(fun = "median",
+               geom = "crossbar", 
+               linewidth = 0.1,
+               colour = "black") +
+  labs(title='Tasa cruda (%) por zona básica de salud por indicador',
+    x = '',
+    y = 'Tasa cruda (%)') +
+    geom_text_repel(data=df_eic_ccaa_,
+                  aes(x=reorder(desc,median,decreasing=FALSE),y=percent,
+                      label=paste0('P(95)/P(05)=',round(p95_p05,1))),nudge_y=0.5) +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  coord_flip()
+
+plot
+
+
+```
+
+#### Prescripción farmacéutica en hombres y mujeres con enfermedad isquémica coronaria
+
+```{r,fig.width=12, fig.height=7}
+#| label: eic prescripcion sexo
+
+
+df_eic_ccaa <- data %>% filter(tipo_analisis %in% c(2,3),ind %in% prescripcion) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_eic_ccaa$sexo[df_eic_ccaa$tipo_analisis == 2] <- 'Hombres'
+
+df_eic_ccaa$sexo[df_eic_ccaa$tipo_analisis == 3] <- 'Mujeres'
+
+df_eic_ccaa <- left_join(df_eic_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_eic_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Prescripción farmacéutica en hombres y mujeres con enfermedad isquémica coronaria',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = sexo),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('Hombres' = '#1072b8','Mujeres' = '#e39e54')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size =10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+
+
+
+```
+
+#### Prescripción farmacéutica en población con enfermedad isquémica coronaria con alto y bajo nivel socioeconómico (NSE)
+
+```{r,fig.width=12, fig.height=7}
+#| label: eic prescripcion nse
+
+
+df_eic_ccaa <- data %>% filter(tipo_analisis %in% c(4,5),ind %in% prescripcion) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_eic_ccaa$nse[df_eic_ccaa$tipo_analisis == 4] <- 'NSE Bajo'
+
+df_eic_ccaa$nse[df_eic_ccaa$tipo_analisis == 5] <- 'NSE Alto'
+
+df_eic_ccaa <- left_join(df_eic_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_eic_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Prescripción farmacéutica en población con enfermedad isquémica coronaria con alto y bajo nivel socioeconómico',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = nse),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('NSE Bajo' = '#1b4ca9','NSE Alto' = '#C70039')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+```
+
+
+:::
+
+
+## Fibrilación Auricular (FA)
+
+```{r,output=FALSE}
+
+database_path <- '../../inputs/data.duckdb'
+
+df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70'),
+                      ccaa_st = c('Aragón','Canarias'))
+data <- read.csv('../../outputs/fa_ind_tablas.csv',sep='|')
+
+df_ind <- data.frame(ind = c('fa','fa_eco','fa_tsh','fa_fr','fa_chads2','fa_hasbled','fa_aco','fa_acoad',                 
+                             'fa_antagk','fa_antiagreg'),
+                     desc = c('Fibrilación Auricular (FA) \n en la población mayor de 18 años',
+                              'Población con FA \n y ecocardiograma en el año del diagnóstico',
+                              'Población con FA \n y determinación de TSH al diagnóstico de la enfermedad',
+                              'Población con FA \n determinación de función renal el año de estudio',
+                              'Población con FA \n y evaluación CHA2DS2-VASc (CHADS2) al diagnóstico',
+                              'Población con FA \n y evaluación HASBLED al diagnóstico',
+                              'Población con FA \n y prescripción de anticoagulantes orales',
+                              'Población con FA \n y prescripción de anticoagulantes orales de acción directa',
+                              'Población con FA \n y prescripción de antagonistas de la vitamina K',
+                              'Población con FA \n y tratamiento antiagregante'))
+
+
+
+df_fa_ccaa <- data %>% filter(ind %in% 'fa',tipo_analisis %in% 1) 
+
+n_casos <- sum(df_fa_ccaa$n_casos_zbs)
+n_pobla <- sum(df_fa_ccaa$n_pobla_zbs)
+perc <- round(100*(n_casos/n_pobla),2)
+df_ccaa_ <- df_ccaa %>% filter(ccaa_cd %in% unique(df_fa_ccaa$ccaa_cd))
+```
+
+
+::: {.callout-tip appearance="simple"}
+
+```{epoxy}
+En {df_ccaa_$ccaa_st} se registraron {n_casos} pacientes con fibrilación auricular (FA), es decir un {perc}% de la población usuaria mayor de 18 años.
+```
+:::
+
+::: {.panel-tabset}
+
+
+### Cuidados ambulatorios 
+
+#### Casos totales
+
+```{r,fig.width=12, fig.height=7}
+#| label: barras fa cuidados
+
+cuidados <- c('fa','fa_eco','fa_tsh','fa_fr','fa_chads2','fa_hasbled')
+
+df_fa_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% cuidados) %>% group_by(ind) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs))
+
+
+df_fa_ccaa <- left_join(df_fa_ccaa,df_ind,by='ind')
+plot <- ggplot(data = df_fa_ccaa, aes(x = reorder(desc,n_casos,decreasing = FALSE), y = n_casos, text = paste("Indicador:", desc, "\nTotal casos:", n_casos))) + 
+  geom_bar(width = 0.9, stat="identity", fill = '#e7cb80') +
+  geom_text(aes(label = n_casos),hjust = 1.0, size = 3,color='gray20')+
+      labs(title = 'Número de casos por indicador', 
+         x = '',
+         y = 'Número de casos') +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 12),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = ' K', accuracy=1))  +
+  coord_flip()
+
+#ggplotly(plot, tooltip = 'text')
+
+plot
+
+```
+
+
+#### Nube de tasas crudas (%) por zonas básica de salud (ZBS)
+
+```{r,fig.width=12, fig.height=7}
+#| label: nube de tasas fa cuidados
+
+df_fa_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% cuidados) %>% group_by(ind) %>% 
+  mutate(median = median(tc_zbs,na.rm=TRUE)) %>% ungroup()
+df_fa_ccaa_ <- df_fa_ccaa %>% group_by(ind,median) %>% summarise(p95_p05 = quantile(tc_zbs, 0.95, na.rm=TRUE)/quantile(tc_zbs, 0.05, na.rm=TRUE))
+
+
+df_fa_ccaa_ <- left_join(df_fa_ccaa_,df_ind,by='ind')
+df_fa_ccaa_$percent <- max(df_fa_ccaa$tc_zbs,na.rm=TRUE)
+
+df_fa_ccaa <- left_join(df_fa_ccaa,df_ind,by='ind')
+
+plot <-  ggplot(data = df_fa_ccaa, aes(x = reorder(desc,median,decreasing = FALSE), y=tc_zbs, group = desc)) +
+  geom_violin(trim = FALSE, color = NA, fill = NA) + 
+  #geom_quasirandom(color = '#2e6930', width = 0.2, size = 0.5, alpha = 0.8) +
+  geom_jitter(color = '#2e6930', position=position_jitter(0.15), size=0.5,alpha=0.8) +
+  stat_summary(fun = "median",
+               geom = "crossbar", 
+               linewidth = 0.1,
+               colour = "black") +
+  labs(title='Tasa cruda (%) por zona básica de salud por indicador',
+    x = '',
+    y = 'Tasa cruda (%)') +
+    geom_text_repel(data=df_fa_ccaa_,
+                  aes(x=reorder(desc,median,decreasing=FALSE),y=percent,
+                      label=paste0('P(95)/P(05)=',round(p95_p05,1))),nudge_y=0.5) +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  coord_flip()
+
+plot
+
+
+```
+
+#### Cuidados ambulatorios en hombres y mujeres con fibrilación auricular
+
+```{r,fig.width=12, fig.height=7}
+#| label: fa cuidados sexo
+
+
+df_fa_ccaa <- data %>% filter(tipo_analisis %in% c(2,3),ind %in% cuidados) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_fa_ccaa$sexo[df_fa_ccaa$tipo_analisis == 2] <- 'Hombres'
+
+df_fa_ccaa$sexo[df_fa_ccaa$tipo_analisis == 3] <- 'Mujeres'
+
+df_fa_ccaa <- left_join(df_fa_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_fa_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Cuidados ambulatorios en hombres y mujeres con fibrilación auricular',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = sexo),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('Hombres' = '#1072b8','Mujeres' = '#e39e54')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size =10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+
+
+
+```
+
+#### Cuidados ambulatorios en población con fibrilación auricular con alto y bajo nivel socioeconómico (NSE)
+
+```{r,fig.width=12, fig.height=7}
+#| label: fa cuidados nse
+
+
+df_fa_ccaa <- data %>% filter(tipo_analisis %in% c(4,5),ind %in% cuidados) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_fa_ccaa$nse[df_fa_ccaa$tipo_analisis == 4] <- 'NSE Bajo'
+
+df_fa_ccaa$nse[df_fa_ccaa$tipo_analisis == 5] <- 'NSE Alto'
+
+df_fa_ccaa <- left_join(df_fa_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_fa_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Cuidados ambulatorios en población con fibrilación auricular con alto y bajo nivel socioeconómico',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = nse),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('NSE Bajo' = '#1b4ca9','NSE Alto' = '#C70039')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+```
+
+
+### Prescripción farmacéutica
+
+#### Casos totales
+
+```{r,fig.width=12, fig.height=7}
+#| label: barras fa prescripcion
+
+prescripcion <- c('fa_aco','fa_acoad','fa_antagk','fa_antiagreg')
+
+df_fa_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% prescripcion) %>% group_by(ind) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs))
+
+
+df_fa_ccaa <- left_join(df_fa_ccaa,df_ind,by='ind')
+plot <- ggplot(data = df_fa_ccaa, aes(x = reorder(desc,n_casos,decreasing = FALSE), y = n_casos, text = paste("Indicador:", desc, "\nTotal casos:", n_casos))) + 
+  geom_bar(width = 0.9, stat="identity", fill = '#e7cb80') +
+  geom_text(aes(label = n_casos),hjust = 1.0, size = 3,color='gray20')+
+      labs(title = 'Número de casos por indicador', 
+         x = '',
+         y = 'Número de casos') +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 12),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = ' K', accuracy=1))  +
+  coord_flip()
+
+#ggplotly(plot, tooltip = 'text')
+
+plot
+
+```
+
+
+#### Nube de tasas crudas (%) por zonas básica de salud (ZBS)
+
+```{r,fig.width=12, fig.height=7}
+#| label: nube de tasas fa prescripcion
+
+df_fa_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% prescripcion) %>% group_by(ind) %>% 
+  mutate(median = median(tc_zbs,na.rm=TRUE)) %>% ungroup()
+
+df_fa_ccaa_ <- df_fa_ccaa %>% group_by(ind,median) %>% summarise(p95_p05 = quantile(tc_zbs, 0.95, na.rm=TRUE)/quantile(tc_zbs, 0.05, na.rm=TRUE))
+
+
+df_fa_ccaa_ <- left_join(df_fa_ccaa_,df_ind,by='ind')
+df_fa_ccaa_$percent <- max(df_fa_ccaa$tc_zbs,na.rm=TRUE)
+
+df_fa_ccaa <- left_join(df_fa_ccaa,df_ind,by='ind')
+
+plot <-  ggplot(data = df_fa_ccaa, aes(x = reorder(desc,median,decreasing = FALSE), y=tc_zbs, group = desc)) +
+  geom_violin(trim = FALSE, color = NA, fill = NA) + 
+  #geom_quasirandom(color = '#2e6930', width = 0.2, size = 0.5, alpha = 0.8) +
+  geom_jitter(color = '#2e6930', position=position_jitter(0.15), size=0.5,alpha=0.8) +
+  stat_summary(fun = "median",
+               geom = "crossbar", 
+               linewidth = 0.1,
+               colour = "black") +
+  labs(title='Tasa cruda (%) por zona básica de salud por indicador',
+    x = '',
+    y = 'Tasa cruda (%)') +
+    geom_text_repel(data=df_fa_ccaa_,
+                  aes(x=reorder(desc,median,decreasing=FALSE),y=percent,
+                      label=paste0('P(95)/P(05)=',round(p95_p05,1))),nudge_y=0.5) +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  coord_flip()
+
+plot
+
+
+```
+
+#### Prescripción farmacéutica en hombres y mujeres con fibrilación auricular
+
+```{r,fig.width=12, fig.height=7}
+#| label: fa prescripcion sexo
+
+
+df_fa_ccaa <- data %>% filter(tipo_analisis %in% c(2,3),ind %in% prescripcion) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_fa_ccaa$sexo[df_fa_ccaa$tipo_analisis == 2] <- 'Hombres'
+
+df_fa_ccaa$sexo[df_fa_ccaa$tipo_analisis == 3] <- 'Mujeres'
+
+df_fa_ccaa <- left_join(df_fa_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_fa_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Prescripción farmacéutica en hombres y mujeres con fibrilación auricular',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = sexo),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('Hombres' = '#1072b8','Mujeres' = '#e39e54')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size =10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+
+
+
+```
+
+#### Prescripción farmacéutica en población con fibrilación auricular con alto y bajo nivel socioeconómico (NSE)
+
+```{r,fig.width=12, fig.height=7}
+#| label: fa prescripcion nse
+
+
+df_fa_ccaa <- data %>% filter(tipo_analisis %in% c(4,5),ind %in% prescripcion) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_fa_ccaa$nse[df_fa_ccaa$tipo_analisis == 4] <- 'NSE Bajo'
+
+df_fa_ccaa$nse[df_fa_ccaa$tipo_analisis == 5] <- 'NSE Alto'
+
+df_fa_ccaa <- left_join(df_fa_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_fa_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Prescripción farmacéutica en población con fibrilación auricular con alto y bajo nivel socioeconómico',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = nse),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('NSE Bajo' = '#1b4ca9','NSE Alto' = '#C70039')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+```
+
+
+:::
+
+
+## Insuficiencia Cardíaca Congestiva (ICC)
+
+```{r,output=FALSE}
+
+database_path <- '../../inputs/data.duckdb'
+
+df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70'),
+                      ccaa_st = c('Aragón','Canarias'))
+data <- read.csv('../../outputs/icc_ind_tablas.csv',sep='|')
+
+df_ind <- data.frame(ind = c('icc','icc_pep_nat','icc_eco','icc_fe','icc_gripe','icc_ieca_ara','icc_sac_val',
+                             'icc_ieca_ara_sac_val','icc_bbloc','icc_antag_aldo','icc_isglt2','icc_ieca-sac_bbloc_aa_isglt2',
+                             'icc_ver','icc_prim_sac_val'),
+                     desc = c('Insuficiencia cardíaca congestiva (ICC) \n en la población mayor de 18 años',
+                              'Población con ICC \n y determinación de péptido natriurético el año de estudio',
+                              'Población con ICC \n y ecocardiograma en el año del diagnóstico',
+                              'Población con ICC \n y determinación/registro de fracción de eyección',
+                              'Población con ICC \n vacunada de la gripe',
+                              'Población con ICC \n y prescripción de Inhibidores de la Enzima Convertidora de Angiotensina
+                              (IECA) o ARA-II',
+                              'Población con ICC \n y prescripción de sacubritilo/valsartán',
+                              'Población con ICC \n y prescripción de IECA o ARA-II o sacubitrilo-valsartán',
+                              'Población con ICC \n y prescripción de betabloqueantes',
+                              'Población con ICC \n y prescripción de antagonistas de la aldosterona',
+                              'Población con ICC \n y prescripción de iSGLT2 (dapagliflozina o empagliflozina)',
+                              'Población con ICC \n y prescripción de IECA o ARA-II o \n sacubitrilo-valsartán y betabloqueante y antagonista de aldosterona y iSGLT2',
+                              'Población con ICC \n y prescripción de vericiguat',
+                              'Población con ICC \n cuyo primer tratamiento es sacubritilo/valsartán'))
+
+
+
+df_icc_ccaa <- data %>% filter(ind %in% 'icc',tipo_analisis %in% 1) 
+
+n_casos <- sum(df_icc_ccaa$n_casos_zbs)
+n_pobla <- sum(df_icc_ccaa$n_pobla_zbs)
+perc <- round(100*(n_casos/n_pobla),2)
+df_ccaa_ <- df_ccaa %>% filter(ccaa_cd %in% unique(df_icc_ccaa$ccaa_cd))
+```
+
+
+::: {.callout-tip appearance="simple"}
+
+```{epoxy}
+En {df_ccaa_$ccaa_st} se registraron {n_casos} pacientes con insuficiencia cardíaca congestiva (ICC), es decir un {perc}% de la población usuaria mayor de 18 años.
+```
+:::
+
+::: {.panel-tabset}
+
+
+### Cuidados ambulatorios 
+
+#### Casos totales
+
+```{r,fig.width=12, fig.height=7}
+#| label: barras icc cuidados
+
+cuidados <- c('icc','icc_pep_nat','icc_eco','icc_fe','icc_gripe')
+
+df_icc_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% cuidados) %>% group_by(ind) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs))
+
+
+df_icc_ccaa <- left_join(df_icc_ccaa,df_ind,by='ind')
+plot <- ggplot(data = df_icc_ccaa, aes(x = reorder(desc,n_casos,decreasing = FALSE), y = n_casos, text = paste("Indicador:", desc, "\nTotal casos:", n_casos))) + 
+  geom_bar(width = 0.9, stat="identity", fill = '#e7cb80') +
+  geom_text(aes(label = n_casos),hjust = 1.0, size = 3,color='gray20')+
+      labs(title = 'Número de casos por indicador', 
+         x = '',
+         y = 'Número de casos') +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 12),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = ' K', accuracy=1))  +
+  coord_flip()
+
+#ggplotly(plot, tooltip = 'text')
+
+plot
+
+```
+
+
+#### Nube de tasas crudas (%) por zonas básica de salud (ZBS)
+
+```{r,fig.width=12, fig.height=7}
+#| label: nube de tasas icc cuidados
+
+df_icc_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% cuidados) %>% group_by(ind) %>% 
+  mutate(median = median(tc_zbs,na.rm=TRUE)) %>% ungroup()
+df_icc_ccaa_ <- df_icc_ccaa %>% group_by(ind,median) %>% summarise(p95_p05 = quantile(tc_zbs, 0.95, na.rm=TRUE)/quantile(tc_zbs, 0.05, na.rm=TRUE))
+
+
+df_icc_ccaa_ <- left_join(df_icc_ccaa_,df_ind,by='ind')
+df_icc_ccaa_$percent <- max(df_icc_ccaa$tc_zbs,na.rm=TRUE)
+
+df_icc_ccaa <- left_join(df_icc_ccaa,df_ind,by='ind')
+
+plot <-  ggplot(data = df_icc_ccaa, aes(x = reorder(desc,median,decreasing = FALSE), y=tc_zbs, group = desc)) +
+  geom_violin(trim = FALSE, color = NA, fill = NA) + 
+  #geom_quasirandom(color = '#2e6930', width = 0.2, size = 0.5, alpha = 0.8) +
+  geom_jitter(color = '#2e6930', position=position_jitter(0.15), size=0.5,alpha=0.8) +
+  stat_summary(fun = "median",
+               geom = "crossbar", 
+               linewidth = 0.1,
+               colour = "black") +
+  labs(title='Tasa cruda (%) por zona básica de salud por indicador',
+    x = '',
+    y = 'Tasa cruda (%)') +
+    geom_text_repel(data=df_icc_ccaa_,
+                  aes(x=reorder(desc,median,decreasing=FALSE),y=percent,
+                      label=paste0('P(95)/P(05)=',round(p95_p05,1))),nudge_y=0.5) +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  coord_flip()
+
+plot
+
+
+```
+
+#### Cuidados ambulatorios en hombres y mujeres con insuficiencia cardíaca congestiva
+
+```{r,fig.width=12, fig.height=7}
+#| label: icc cuidados sexo
+
+
+df_icc_ccaa <- data %>% filter(tipo_analisis %in% c(2,3),ind %in% cuidados) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_icc_ccaa$sexo[df_icc_ccaa$tipo_analisis == 2] <- 'Hombres'
+
+df_icc_ccaa$sexo[df_icc_ccaa$tipo_analisis == 3] <- 'Mujeres'
+
+df_icc_ccaa <- left_join(df_icc_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_icc_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Cuidados ambulatorios en hombres y mujeres con insuficiencia cardíaca congestiva',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = sexo),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('Hombres' = '#1072b8','Mujeres' = '#e39e54')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size =10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+
+
+
+```
+
+#### Cuidados ambulatorios en población con insuficiencia cardíaca congestiva con alto y bajo nivel socioeconómico (NSE)
+
+```{r,fig.width=12, fig.height=7}
+#| label: icc cuidados nse
+
+
+df_icc_ccaa <- data %>% filter(tipo_analisis %in% c(4,5),ind %in% cuidados) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_icc_ccaa$nse[df_icc_ccaa$tipo_analisis == 4] <- 'NSE Bajo'
+
+df_icc_ccaa$nse[df_icc_ccaa$tipo_analisis == 5] <- 'NSE Alto'
+
+df_icc_ccaa <- left_join(df_icc_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_icc_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Cuidados ambulatorios en población con insuficiencia cardíaca congestiva con alto y bajo nivel socioeconómico',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = nse),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('NSE Bajo' = '#1b4ca9','NSE Alto' = '#C70039')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+```
+
+
+
+
+### Prescripción farmacéutica
+
+#### Casos totales
+
+```{r,fig.width=12, fig.height=7}
+#| label: barras icc prescripcion
+
+prescripcion <- c('icc_ieca_ara','icc_sac_val',
+                             'icc_ieca_ara_sac_val','icc_bbloc','icc_antag_aldo','icc_isglt2','icc_ieca-sac_bbloc_aa_isglt2',
+                             'icc_ver','icc_prim_sac_val')
+
+df_icc_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% prescripcion) %>% group_by(ind) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs))
+
+
+df_icc_ccaa <- left_join(df_icc_ccaa,df_ind,by='ind')
+plot <- ggplot(data = df_icc_ccaa, aes(x = reorder(desc,n_casos,decreasing = FALSE), y = n_casos, text = paste("Indicador:", desc, "\nTotal casos:", n_casos))) + 
+  geom_bar(width = 0.9, stat="identity", fill = '#e7cb80') +
+  geom_text(aes(label = n_casos),hjust = 1.0, size = 3,color='gray20')+
+      labs(title = 'Número de casos por indicador', 
+         x = '',
+         y = 'Número de casos') +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 12),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = ' K', accuracy=1))  +
+  coord_flip()
+
+#ggplotly(plot, tooltip = 'text')
+
+plot
+
+```
+
+
+#### Nube de tasas crudas (%) por zonas básica de salud (ZBS)
+
+```{r,fig.width=12, fig.height=7}
+#| label: nube de tasas icc prescripcion
+
+df_icc_ccaa <- data %>% filter(tipo_analisis %in% 1,ind %in% prescripcion) %>% group_by(ind) %>% 
+  mutate(median = median(tc_zbs,na.rm=TRUE)) %>% ungroup()
+df_icc_ccaa_ <- df_icc_ccaa %>% group_by(ind,median) %>% summarise(p95_p05 = quantile(tc_zbs, 0.95, na.rm=TRUE)/quantile(tc_zbs, 0.05, na.rm=TRUE))
+
+
+df_icc_ccaa_ <- left_join(df_icc_ccaa_,df_ind,by='ind')
+df_icc_ccaa_$percent <- max(df_icc_ccaa$tc_zbs,na.rm=TRUE)
+df_icc_ccaa <- left_join(df_icc_ccaa,df_ind,by='ind')
+
+plot <-  ggplot(data = df_icc_ccaa, aes(x = reorder(desc,median,decreasing = FALSE), y=tc_zbs, group = desc)) +
+  geom_violin(trim = FALSE, color = NA, fill = NA) + 
+  #geom_quasirandom(color = '#2e6930', width = 0.2, size = 0.5, alpha = 0.8) +
+  geom_jitter(color = '#2e6930', position=position_jitter(0.15), size=0.5,alpha=0.8) +
+  stat_summary(fun = "median",
+               geom = "crossbar", 
+               linewidth = 0.1,
+               colour = "black") +
+  labs(title='Tasa cruda (%) por zona básica de salud por indicador',
+    x = '',
+    y = 'Tasa cruda (%)') +
+    geom_text_repel(data=df_icc_ccaa_,
+                  aes(x=reorder(desc,median,decreasing=FALSE),y=percent,
+                      label=paste0('P(95)/P(05)=',round(p95_p05,1))),nudge_y=0.5) +
+      theme(title = element_text(size = 10), panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 12), legend.title = element_text(size = 12), 
+          axis.ticks = element_blank()) +
+  coord_flip()
+
+plot
+
+
+```
+
+#### Prescripción farmacéutica en hombres y mujeres con insuficiencia cardíaca congestiva
+
+```{r,fig.width=12, fig.height=7}
+#| label: icc prescripcion sexo
+
+
+df_icc_ccaa <- data %>% filter(tipo_analisis %in% c(2,3),ind %in% prescripcion) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_icc_ccaa$sexo[df_icc_ccaa$tipo_analisis == 2] <- 'Hombres'
+
+df_icc_ccaa$sexo[df_icc_ccaa$tipo_analisis == 3] <- 'Mujeres'
+
+df_icc_ccaa <- left_join(df_icc_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_icc_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Prescripción farmacéutica en hombres y mujeres con insuficiencia cardíaca congestiva',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = sexo),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('Hombres' = '#1072b8','Mujeres' = '#e39e54')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size =10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+
+
+
+```
+
+#### Prescripción farmacéutica en población con insuficiencia cardíaca congestiva con alto y bajo nivel socioeconómico (NSE)
+
+```{r,fig.width=12, fig.height=7}
+#| label: icc prescripcion nse
+
+
+df_icc_ccaa <- data %>% filter(tipo_analisis %in% c(4,5),ind %in% prescripcion) %>% group_by(ind,tipo_analisis) %>% 
+  summarise(n_casos = sum(n_casos_zbs,na.rm=TRUE),
+            n_pobla = sum(n_pobla_zbs,na.rm = TRUE),
+            percent = round(100*(n_casos/n_pobla),0))
+
+
+df_icc_ccaa$nse[df_icc_ccaa$tipo_analisis == 4] <- 'NSE Bajo'
+
+df_icc_ccaa$nse[df_icc_ccaa$tipo_analisis == 5] <- 'NSE Alto'
+
+df_icc_ccaa <- left_join(df_icc_ccaa,df_ind,by='ind')
+
+
+plot <- ggplot(df_icc_ccaa, aes(x = desc, y=percent, group = ind)) +
+    labs(title = 'Prescripción farmacéutica en población con insuficiencia cardíaca congestiva con alto y bajo nivel socioeconómico',
+         y='Porcentaje casos',
+         x='') +
+  geom_line() +
+    geom_point(aes(color = nse),size = 10) +
+    geom_text(aes(x = desc, y=percent,label = paste0(percent,'%')),color='white', size = 3) +
+    scale_color_manual(name='',values = c('NSE Bajo' = '#1b4ca9','NSE Alto' = '#C70039')) +
+    theme(title = element_text(size = 10),plot.title.position = 'plot',
+          panel.background = element_blank(), axis.title = element_text(size = 10),
+          axis.text = element_text(size = 9),  
+          legend.text = element_text(size = 10), legend.title = element_text(size = 8),legend.position = 'bottom', 
+          axis.ticks = element_blank()) + coord_flip()
+
+
+plot
+
+```
+
+
+:::
+
+

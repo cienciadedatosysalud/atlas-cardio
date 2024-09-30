@@ -2,7 +2,7 @@ import json
 import logging
 import os
 
-import duckdb  # duckdb-0.8.1
+import duckdb  
 import pandas as pd
 import chardet
 import re
@@ -18,6 +18,7 @@ def infer_separator(file_, uploaded_file_):
         return '|'
 
 
+
 def infer_encoding(uploaded_file_):
     logging.info(f"Trying to detect the encoding of the file '{uploaded_file_}'")
     detector = chardet.UniversalDetector()
@@ -29,8 +30,11 @@ def infer_encoding(uploaded_file_):
     encoding = detector.result['encoding']
     confidence = detector.result['confidence']
     logging.info(f"The file '{uploaded_file_}' follows an encoding format '{encoding}' at {confidence} confidence.")
-    return encoding
-
+    if confidence < 0.95:
+        logging.warning(f"Confidence value is too low, 'utf-8' encoding will be applied.")
+        return 'utf-8'    
+    else:
+        return encoding
 
 if __name__ == '__main__':
     # Do not modify if you use the deployment container!
@@ -47,7 +51,7 @@ if __name__ == '__main__':
     logging.info("Starting Checking data compliance with validation rules process")
     # Opening JSON file
     try:
-        with open(configuration_file_path) as configuration_file:
+        with open(configuration_file_path,encoding='utf-8') as configuration_file:
             configuration_file = json.load(configuration_file)
     except FileNotFoundError as e:
         logging.error("Configuration file "" is missing!")
