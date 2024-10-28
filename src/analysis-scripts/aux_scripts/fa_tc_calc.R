@@ -323,7 +323,7 @@ df_fa_fg_all <- rbind(df_fa_fg_all,data_csv)
 
 pobla <- dbGetQuery(conn = con,
                     paste0("select * from main.paciente where enfermedad_cd == 3 and 
-                             edad_nm >= 18 and year(fecha_enfermedad_dt) == 2023 and zbs_residencia_cd is not NULL and sexo_cd ==1"))
+                             edad_nm >= 18 and zbs_residencia_cd is not NULL and sexo_cd ==1"))
 
 df_fa <- pobla %>% filter(paciente_id %in% df$paciente_id)  
 
@@ -343,7 +343,7 @@ df_fa_fg_all <- rbind(df_fa_fg_all,data_csv)
 
 pobla <- dbGetQuery(conn = con,
                     paste0("select * from main.paciente where enfermedad_cd == 3 and 
-                             edad_nm >= 18 and year(fecha_enfermedad_dt) == 2023 and zbs_residencia_cd is not NULL and sexo_cd ==2"))
+                             edad_nm >= 18 and zbs_residencia_cd is not NULL and sexo_cd ==2"))
 
 df_fa <- pobla %>% filter(paciente_id %in% df$paciente_id)  
 
@@ -364,7 +364,7 @@ df_fa_fg_all <- rbind(df_fa_fg_all,data_csv)
 
 pobla <- dbGetQuery(conn = con,
                     paste0("select * from main.paciente where enfermedad_cd == 3 and 
-                             edad_nm >= 18 and year(fecha_enfermedad_dt) == 2023 and zbs_residencia_cd is not NULL and nivel_copago_cd == 0"))
+                             edad_nm >= 18 and zbs_residencia_cd is not NULL and nivel_copago_cd == 0"))
 
 df_fa <- pobla %>% filter(paciente_id %in% df$paciente_id)  
 
@@ -384,7 +384,7 @@ df_fa_fg_all <- rbind(df_fa_fg_all,data_csv)
 
 pobla <- dbGetQuery(conn = con,
                     paste0("select * from main.paciente where enfermedad_cd == 3 and 
-                             edad_nm >= 18 and year(fecha_enfermedad_dt) == 2023 and zbs_residencia_cd is not NULL and nivel_copago_cd == 1"))
+                             edad_nm >= 18 and zbs_residencia_cd is not NULL and nivel_copago_cd == 1"))
 
 df_fa <- pobla %>% filter(paciente_id %in% df$paciente_id)  
 
@@ -540,7 +540,7 @@ fa_indicadores_tratamiento <- function(i){
 df_fa_atc_all <- lapply(df_atc_tratamiento$cod,fa_indicadores_tratamiento)  
 
 
-df_fa_atc_all <- rbind(df_fa_atc_all[[1]],df_fa_atc_all[[2]],df_fa_atc_all[[3]])
+df_fa_atc_all <- rbind(df_fa_atc_all[[1]],df_fa_atc_all[[2]],df_fa_atc_all[[3]],df_fa_atc_all[[4]])
 
 
 df_all <- rbind(df_fa_global,df_fa_exams_tsh_all,df_fa_fg_all,df_fa_atc_all)

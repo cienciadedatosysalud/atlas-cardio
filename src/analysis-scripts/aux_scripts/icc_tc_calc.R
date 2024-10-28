@@ -148,9 +148,9 @@ dbDisconnect(con, shutdown=TRUE)
 df_icc_exams_pn <- data.frame()
 
 
-df_ind_exams_pn <- data.frame(ind = c('pn','fevi','vacuna_gripe'),
-                              descr = c('Pépitido natriurético (BNP y NT-proBNP)','Determinación fracción eyección ventrículo izq.','Vacunación antigripal'),
-                              cod = c('icc_pep_nat','icc_fe','icc_gripe'))
+df_ind_exams_pn <- data.frame(ind = c('pn','vacuna_gripe'),
+                              descr = c('Pépitido natriurético (BNP y NT-proBNP)','Vacunación antigripal'),
+                              cod = c('icc_pep_nat','icc_gripe'))
 
 icc_indicadores_exam <- function(i){
   
@@ -271,7 +271,7 @@ icc_indicadores_exam <- function(i){
 df_icc_exams_pn_all <- lapply(df_ind_exams_pn$ind,icc_indicadores_exam)
 
 
-df_icc_exams_pn_all <- rbind(df_icc_exams_pn_all[[1]],df_icc_exams_pn_all[[2]],df_icc_exams_pn_all[[3]])
+df_icc_exams_pn_all <- rbind(df_icc_exams_pn_all[[1]],df_icc_exams_pn_all[[2]])
 
 
 
@@ -288,7 +288,7 @@ df <- dbGetQuery(conn = con,
                  paste0("SELECT * FROM main.examenes WHERE examen_cd == 'ecocardio' and year(examen_dt) == 2023"))
 pobla <- dbGetQuery(conn = con,
                     paste0("select * from main.paciente where enfermedad_cd == 2 and 
-                             edad_nm >= 18 and zbs_residencia_cd is not NULL"))
+                             edad_nm >= 18 and year(fecha_enfermedad_dt) == 2023 and  zbs_residencia_cd is not NULL"))
 
 df_icc <- pobla %>% filter(paciente_id %in% df$paciente_id)  
 
@@ -408,11 +408,11 @@ dbDisconnect(con, shutdown=TRUE)
 df_icc_atc <- data.frame()
 
 
-df_atc_tratamiento <- data.frame(ind = c('C09','C09DX04','C09','C07','C03DA','A10B','','C01DX22','C09DX04'),
-                                 filter = c('C09C|C09D|C09A|C09B','C09DX04','C09DX04|C09C|C09D|C09A|C09B','C07','C03DA',
+df_atc_tratamiento <- data.frame(ind = c('C09','C09DX04','C07','C03DA','A10B','','C01DX22','C09DX04'),
+                                 filter = c('C09C|C09D|C09A|C09B','C09DX04','C07','C03DA',
                                             'A10BK01|A10BD15|A10BD21|A10BK03|A10BD20|A10BD19',
-                                            'C09C|C09D|C09A|C09B|C09DX04|C07|C03DA|A10BK01|A10BD15|A10BD21|A10BK03|A10BD20|A10BD19','C01DX22','C09DX04'),
-                                 cod = c('icc_ieca_ara','icc_sac_val','icc_ieca_ara_sac_val','icc_bbloc','icc_antag_aldo','icc_isglt2',
+                                            '','C01DX22','C09DX04'),
+                                 cod = c('icc_ieca_ara','icc_sac_val','icc_bbloc','icc_antag_aldo','icc_isglt2',
                                          'icc_ieca-sac_bbloc_aa_isglt2','icc_ver','icc_prim_sac_val'))
 
 icc_indicadores_tratamiento <- function(i){
@@ -423,25 +423,43 @@ icc_indicadores_tratamiento <- function(i){
   df_atc_tratamiento_ <- df_atc_tratamiento %>% filter(cod %in% i)
   if(i == 'icc_prim_sac_val'){
     
+
     df <- dbGetQuery(conn=con,"SELECT paciente_id, atc_tratamiento_cd, fecha_inicio_prescripcion_dt
-                                  FROM (
-                                  SELECT *,
-                                  ROW_NUMBER() OVER (PARTITION BY paciente_id ORDER BY fecha_inicio_prescripcion_dt) AS rn
-                                  FROM main.tratamiento 
-                                  ) sub
-                                  WHERE rn = 1 and atc_tratamiento_cd = 'C09DX04'")
+                                  FROM main.tratamiento")
     
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and year(fecha_enfermedad_dt) == 2023 and edad_nm >= 18 and zbs_residencia_cd is not NULL"))
+
+    df_ <- left_join(df,pobla[c('paciente_id','fecha_enfermedad_dt')],by='paciente_id') 
     
-  }else{
+    df_ <- df_ %>% filter(fecha_inicio_prescripcion_dt >= fecha_enfermedad_dt)
+    df_ <- df_ %>% group_by(paciente_id) %>% mutate(min_date = min(fecha_inicio_prescripcion_dt)) %>% ungroup()
+    df_ <- df_ %>% filter(fecha_inicio_prescripcion_dt == min_date)
+    df_ <- df_ %>% filter(atc_tratamiento_cd %in% 'C09DX04')
+    
+    df <- df_
+    rm(df_)
+    }else{
     df <- dbGetQuery(conn = con,
                      paste0("SELECT * from main.tratamiento where atc_tratamiento_cd LIKE '",df_atc_tratamiento_$ind,"%'"))
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL"))
   }
   
-  df <- df %>% filter(str_starts(atc_tratamiento_cd,df_atc_tratamiento_$filter))
-  
-  
-  pobla <- dbGetQuery(conn = con,
-                      paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL"))
+  if(i=='icc_ieca-sac_bbloc_aa_isglt2'){
+    
+    df_beta <- df  %>% filter(str_starts(atc_tratamiento_cd,'C07'))
+    df_aa <- df  %>% filter(str_starts(atc_tratamiento_cd,'C03DA'))
+    df_isglt <- df  %>% filter(str_starts(atc_tratamiento_cd,'A10BK01|A10BD15|A10BD21|A10BK03|A10BD20|A10BD19'))
+    df_ <- df  %>% filter(str_starts(atc_tratamiento_cd,'C09C|C09D|C09A|C09B|C09DX04'))
+    df__ <- df_beta %>% filter(paciente_id %in% df_aa$paciente_id)
+    df__ <- df__ %>% filter(paciente_id %in% df_isglt$paciente_id)
+    df__ <- df__ %>% filter(paciente_id %in% df_$paciente_id)
+    df <- df__ 
+    rm(df_beta,df_aa,df_isglt,df_,df__)
+    }else{
+    df <- df %>% filter(str_starts(atc_tratamiento_cd,df_atc_tratamiento_$filter))
+  }
   
   df_icc <- pobla %>% filter(paciente_id %in% df$paciente_id)  
   
@@ -460,8 +478,17 @@ icc_indicadores_tratamiento <- function(i){
   
   ### HOMBRES ###
   
-  pobla <- dbGetQuery(conn = con,
-                      paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL and sexo_cd ==1"))
+  if(i == 'icc_prim_sac_val'){
+    
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and year(fecha_enfermedad_dt) == 2023 and edad_nm >= 18 and zbs_residencia_cd is not NULL and sexo_cd ==1"))
+    
+  }else{
+
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL and sexo_cd ==1"))
+  }
+
   
   df_icc <- pobla %>% filter(paciente_id %in% df$paciente_id)  
   
@@ -481,8 +508,16 @@ icc_indicadores_tratamiento <- function(i){
   
   ### MUJERES ###
   
-  pobla <- dbGetQuery(conn = con,
-                      paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL and sexo_cd ==2"))
+  if(i == 'icc_prim_sac_val'){
+    
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and year(fecha_enfermedad_dt) == 2023 and edad_nm >= 18 and zbs_residencia_cd is not NULL and sexo_cd ==2"))
+    
+  }else{
+    
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL and sexo_cd ==2"))
+  }
   
   df_icc <- pobla %>% filter(paciente_id %in% df$paciente_id)  
   
@@ -500,8 +535,16 @@ icc_indicadores_tratamiento <- function(i){
   df_icc_atc <- rbind(df_icc_atc,data_csv)
   ### NS Bajo ###
   
-  pobla <- dbGetQuery(conn = con,
-                      paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL and nivel_copago_cd == 0"))
+  if(i == 'icc_prim_sac_val'){
+    
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and year(fecha_enfermedad_dt) == 2023 and edad_nm >= 18 and zbs_residencia_cd is not NULL and nivel_copago_cd ==0"))
+    
+  }else{
+    
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL and nivel_copago_cd ==0"))
+  }
   
   df_icc <- pobla %>% filter(paciente_id %in% df$paciente_id)  
   
@@ -520,8 +563,16 @@ icc_indicadores_tratamiento <- function(i){
   
   ### NS Alto ###
   
-  pobla <- dbGetQuery(conn = con,
-                      paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL and nivel_copago_cd == 1"))
+  if(i == 'icc_prim_sac_val'){
+    
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and year(fecha_enfermedad_dt) == 2023 and edad_nm >= 18 and zbs_residencia_cd is not NULL and nivel_copago_cd ==1"))
+    
+  }else{
+    
+    pobla <- dbGetQuery(conn = con,
+                        paste0("select * from main.paciente where enfermedad_cd == 2 and edad_nm >= 18 and zbs_residencia_cd is not NULL and nivel_copago_cd ==1"))
+  }
   
   df_icc <- pobla %>% filter(paciente_id %in% df$paciente_id)  
   
@@ -548,7 +599,7 @@ df_icc_atc_all <- lapply(df_atc_tratamiento$cod,icc_indicadores_tratamiento)
 
 df_icc_atc_all <- rbind(df_icc_atc_all[[1]],df_icc_atc_all[[2]],df_icc_atc_all[[3]],
                         df_icc_atc_all[[4]],df_icc_atc_all[[5]],df_icc_atc_all[[6]],
-                        df_icc_atc_all[[7]],df_icc_atc_all[[8]],df_icc_atc_all[[9]])
+                        df_icc_atc_all[[7]],df_icc_atc_all[[8]])
 
 
 

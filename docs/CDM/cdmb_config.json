@@ -10,7 +10,7 @@
         "work_package": "1",
         "use_case": "atlasvpm_cardio",
         "document": "Modelo común de datos",
-        "version_sem": "0.1.0",
+        "version_sem": "0.1.1",
         "authors": [
             {
                 "name": "Bernal-Delgado, Enrique (Investigador Principal)",
@@ -46,6 +46,21 @@
                 "name": "Seral-Rodríguez, Miriam",
                 "affiliation": "Instituto Aragonés de Ciencias de la Salud (IACS)",
                 "id": "0000-0001-9365-4342"
+            },
+            {
+                "name": "Escobar Cervantes, Carlos",
+                "affiliation": "Servicio de Cardiología, Hospital Universitario La Paz, Madrid",
+                "id": ""
+            },
+            {
+                "name": "Turón Alcaine, José María",
+                "affiliation": "Coordinador de calidad del sector sanitario de Alcañiz",
+                "id": ""
+            },
+            {
+                "name": "Quiros Lopez Raul",
+                "affiliation": "Servicio de Medicina Interna. Hospital Universitario Costa del Sol, Marbella",
+                "id": "0000-0002-2802-2477"
             }
         ],
         "keywords": [
@@ -57,7 +72,7 @@
             "atención especializada"
         ],
         "description": "Estudio de las variaciones a nivel de área sanitaria de la atención cardiológica en atención ambulatoria. Este estudio tiene como objetivos específicos:\na) Definir operativamente un listado de indicadores que describan los cuidados (proceso), el tratamiento farmacéutico y los resultados intermedios de la atención a personas con enfermedades cardíacas crónicas, en concreto, cardiopatía isquémica, insuficiencia cardíaca congestiva y fibrilación auricular; b) Especificar el modelo de datos requerido para medir de forma sistemática y consistente estos indicadores a nivel de zona básica de salud, de conformidad con los datos de vida real disponibles en los sistemas de información de salud de las CCAA; c) Describir y cartografiar la variación geográfica de la atención al paciente cardíaco por zona básica de salud, analizando también las diferencias por sexo y por nivel socioeconómico; d) Presentar los resultados de monitorización de forma interactiva.",
-        "notes": "0.0.1 primera versión de modelo común de datos\n0.0.2 primera versión del modelo común de datos siguiendo el estándar 'cdmb'\n0.0.3 actualización con correcciones mínimas en los metadatos y en la descripción y criterios de inclusión de la cohorte\n0.0.4 actualización con correcciones mínimas criterios de exclusión de la cohorte. En la pestaña 'cohort_definition_inclusion' se añaden los puntos en la columna code para icd-10 (lo mismo en la pestaña 'paciente_enfermedad_cd'). En la entidad 'paciente' y 'población' cambios en las variables: zbs_residencia_cd, edad_nm, nivel_copago_cd (ver columna 'observations_comments').\n0.0.5 Se añade la variable 'fecha_enfermedad_dt' a la entidad paciente (pestaña 'paciente'). Se actualiza la columna 'transformations_from_origin' de la variable 'test_cd' (pestaña 'test_cd') y 'examen_cd' (pestaña 'examenes'). Se elimina la columna 'enfermedad_st' en la pestaña 'tratamiento_atc_tratamiento_cd' y del catálogo correspondiente.\n0.1.0 Se amplia la cohorte ",
+        "notes": "0.0.1 primera versión de modelo común de datos\n0.0.2 primera versión del modelo común de datos siguiendo el estándar 'cdmb'\n0.0.3 actualización con correcciones mínimas en los metadatos y en la descripción y criterios de inclusión de la cohorte\n0.0.4 actualización con correcciones mínimas criterios de exclusión de la cohorte. En la pestaña 'cohort_definition_inclusion' se añaden los puntos en la columna code para icd-10 (lo mismo en la pestaña 'paciente_enfermedad_cd'). En la entidad 'paciente' y 'población' cambios en las variables: zbs_residencia_cd, edad_nm, nivel_copago_cd (ver columna 'observations_comments').\n0.0.5 Se añade la variable 'fecha_enfermedad_dt' a la entidad paciente (pestaña 'paciente'). Se actualiza la columna 'transformations_from_origin' de la variable 'test_cd' (pestaña 'test_cd') y 'examen_cd' (pestaña 'examenes'). Se elimina la columna 'enfermedad_st' en la pestaña 'tratamiento_atc_tratamiento_cd' y del catálogo correspondiente.\n0.1.0 Se modifica ",
         "spatial_coverage": "España",
         "license": "CC BY 4.0 https://creativecommons.org/licenses/by/4.0/"
     },
