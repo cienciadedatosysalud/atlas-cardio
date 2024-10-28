@@ -12,14 +12,19 @@
             "description": "Rule for column sexo_cd"
         },
         {
-            "expression": "copago_cd IN ('0', '1', '2')",
-            "name": "copago_cd",
-            "description": "Rule for column copago_cd"
+            "expression": "nivel_copago_cd IN ('0', '1', '2')",
+            "name": "nivel_copago_cd",
+            "description": "Rule for column nivel_copago_cd"
         },
         {
-            "expression": "disease_cd IN ('1', '2', '3')",
-            "name": "disease_cd",
-            "description": "Rule for column disease_cd"
+            "expression": "fecha_enfermedad_dt < '2024-01-01'",
+            "name": "fecha_enfermedad_dt",
+            "description": "Rule for column fecha_enfermedad_dt"
+        },
+        {
+            "expression": "enfermedad_cd IN ('1', '2', '3')",
+            "name": "enfermedad_cd",
+            "description": "Rule for column enfermedad_cd"
         }
     ]
 }

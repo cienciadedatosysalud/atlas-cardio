@@ -1,3 +1,4 @@
 **/inputs/data.duckdb
+**/src/analysis-scripts/testing.py
 **/docs/CDM/hashed_files_list.json
 .git*

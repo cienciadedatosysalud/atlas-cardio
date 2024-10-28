@@ -30,7 +30,11 @@ def infer_encoding(uploaded_file_):
     encoding = detector.result['encoding']
     confidence = detector.result['confidence']
     logging.info(f"The file '{uploaded_file_}' follows an encoding format '{encoding}' at {confidence} confidence.")
-    return encoding
+    if confidence < 0.95:
+        logging.warning(f"Confidence value is too low, 'utf-8' encoding will be applied.")
+        return 'utf-8'    
+    else:
+        return encoding
 
 
 def read_file(entity_structure, dtype_, parse_dates):
@@ -95,8 +99,10 @@ def check_file(entity_structure):
             pass
         elif f == 'boolean':
             dtype_[c] = pd.BooleanDtype()
-        elif f == 'date' or f == 'datetime':
-            parse_dates.append(c)
+        elif f == 'date':
+            dtype_[c] = pd.StringDtype()
+        elif f == 'datetime':
+            parse_dates.append(c)    
         elif f == 'integer':
             dtype_[c] = pd.Int64Dtype()
         elif f == 'double':
@@ -178,8 +184,9 @@ if __name__ == '__main__':
     global entities_uploaded
     entities_uploaded = 0
     # Opening JSON file
+    encoding = infer_encoding(configuration_file_path)
     try:
-        with open(configuration_file_path) as configuration_file:
+        with open(configuration_file_path,encoding=encoding) as configuration_file:
             configuration_file = json.load(configuration_file)
     except FileNotFoundError as e:
         logging.error("Configuration file "" is missing!")

@@ -1,156 +1,168 @@
 {
     "files": [
         {
-            "filename": "20240710103454_cdmb/src/analysis-scripts/_quarto.yml",
+            "filename": "20240927112601_cdmb/src/analysis-scripts/_quarto.yml",
             "hash": "aa2f538702b55d59e782d63d463a75a7"
         },
         {
-            "filename": "20240710103454_cdmb/src/analysis-scripts/r_report_template.qmd",
+            "filename": "20240927112601_cdmb/src/analysis-scripts/testing.py",
+            "hash": "41593a320eb254914b39a60c75f438de"
+        },
+        {
+            "filename": "20240927112601_cdmb/src/analysis-scripts/r_report_template.qmd",
             "hash": "82495de8927159ebb7924b36f611b0b2"
         },
         {
-            "filename": "20240710103454_cdmb/src/check_load-scripts/inputs/readme.txt",
+            "filename": "20240927112601_cdmb/src/check_load-scripts/inputs/readme.txt",
             "hash": "52039a1eabfedece8bc5825b1e2ca83d"
         },
         {
-            "filename": "20240710103454_cdmb/src/check_load-scripts/check_load.py",
-            "hash": "3dd6bfc1f3530c5affbcde0cd5ba6c58"
+            "filename": "20240927112601_cdmb/src/check_load-scripts/check_load.py",
+            "hash": "e340643c56d1ae4e062c31b6d26e03db"
         },
         {
-            "filename": "20240710103454_cdmb/src/dqa-scripts/dqa.py",
+            "filename": "20240927112601_cdmb/src/dqa-scripts/dqa.py",
             "hash": "093bdfb4f475c487661d16c4ae9c018d"
         },
         {
-            "filename": "20240710103454_cdmb/src/validation-scripts/_quarto.yml",
+            "filename": "20240927112601_cdmb/src/validation-scripts/_quarto.yml",
             "hash": "aa2f538702b55d59e782d63d463a75a7"
         },
         {
-            "filename": "20240710103454_cdmb/src/validation-scripts/validator_report.qmd",
-            "hash": "f0cecbcff141a9f6cbaa1b1df60e7818"
+            "filename": "20240927112601_cdmb/src/validation-scripts/validator_report.qmd",
+            "hash": "359e4134527bcd22265393aa724e60fc"
         },
         {
-            "filename": "20240710103454_cdmb/src/validation-scripts/validator.py",
-            "hash": "2a78c043ae7f75560ea258665b78300b"
+            "filename": "20240927112601_cdmb/src/validation-scripts/validator.py",
+            "hash": "6fe97d3cbee406ec65ba0e0dd8378728"
         },
         {
-            "filename": "20240710103454_cdmb/outputs/readme.txt",
+            "filename": "20240927112601_cdmb/outputs/readme.txt",
             "hash": "122232d632a879afd16e671f9b81c845"
         },
         {
-            "filename": "20240710103454_cdmb/outputs/logs/readme.txt",
+            "filename": "20240927112601_cdmb/outputs/logs/readme.txt",
             "hash": "96ce67054dc340e41b7dd13721163067"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/cdmb_config.json",
-            "hash": "02c52ba0acb97cdd3c77c1af48a44079"
+            "filename": "20240927112601_cdmb/docs/CDM/cdmb_config.json",
+            "hash": "e8d549b40869782e7b93b9523723ef42"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/ER.gv.png",
-            "hash": "df2fe299babd94ec545ac233a846774f"
+            "filename": "20240927112601_cdmb/docs/CDM/ER.gv.png",
+            "hash": "65887451161364d5961da474179f1182"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/synthetic-data/synthetic_test.csv",
-            "hash": "920d9a74d45bebdfbdee387f8bbf7064"
+            "filename": "20240927112601_cdmb/docs/CDM/synthetic-data/synthetic_test.csv",
+            "hash": "464ea6b7900ed11a01a8a584779fa17c"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/synthetic-data/synthetic_examenes.csv",
-            "hash": "8392eff717e894982fb31e7b6e9c9fd2"
+            "filename": "20240927112601_cdmb/docs/CDM/synthetic-data/synthetic_examenes.csv",
+            "hash": "c83ad5d8fafdbc3bd7ed3b69629774ea"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/synthetic-data/synthetic_comorbilidad.csv",
-            "hash": "98ee54aa939bc95e28891a4fa7f12007"
+            "filename": "20240927112601_cdmb/docs/CDM/synthetic-data/synthetic_comorbilidad.csv",
+            "hash": "1ce03f0936d1a1ced2c7298430c4195b"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/synthetic-data/synthetic_paciente.csv",
-            "hash": "bffeae5b859d533121c78632cf6cb38e"
+            "filename": "20240927112601_cdmb/docs/CDM/synthetic-data/synthetic_paciente.csv",
+            "hash": "cc6f4f3cde252ccfe28a9054bb1240d2"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/synthetic-data/synthetic_tratamiento.csv",
-            "hash": "5ffdf80c293a1be5ee349e88f239f30e"
+            "filename": "20240927112601_cdmb/docs/CDM/synthetic-data/synthetic_tratamiento.csv",
+            "hash": "d8abef9f32cca36b717914eb4102b034"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/synthetic-data/synthetic_poblacion.csv",
-            "hash": "5a078fda69535cd0638dbe3159256ccb"
+            "filename": "20240927112601_cdmb/docs/CDM/synthetic-data/synthetic_poblacion.csv",
+            "hash": "7cff65a707b5edfcb8fe98d5dbce248c"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/ER.gv",
-            "hash": "8cf462d019807661ba8fc7bcf2213341"
+            "filename": "20240927112601_cdmb/docs/CDM/ER.gv",
+            "hash": "0fb2b7ac7058747bfac1aa26bbb448b0"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/common_datamodel.xlsx",
-            "hash": "9c6bdac3264144b00707cd5129b977c1"
+            "filename": "20240927112601_cdmb/docs/CDM/common_datamodel.xlsx",
+            "hash": "78aedfbac8c26f9dba1202e616966d5b"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/cohort_definition_inclusion.csv",
-            "hash": "eeb019adab1e8ec929837ed25e77e9b1"
+            "filename": "20240927112601_cdmb/docs/CDM/cohort_definition_inclusion.csv",
+            "hash": "996f8959000be5a96e2db45d8b9a66bd"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/poblacion/catalogs/ccaa_cd.csv",
+            "filename": "20240927112601_cdmb/docs/CDM/entities/poblacion/catalogs/ccaa_cd.csv",
             "hash": "ef2aac5971a9915f84bb2a92f486bc41"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/poblacion/validation-rules/rules_set_poblacion.json",
-            "hash": "70bd77b9b5f574716f86bf221202bd75"
+            "filename": "20240927112601_cdmb/docs/CDM/entities/poblacion/validation-rules/rules_set_poblacion.json",
+            "hash": "08d8b4ae649aabc595dd76e6fdb5e938"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/test/validation-rules/rules_set_test.json",
-            "hash": "dc79940016642895dc26f05dc5be3311"
+            "filename": "20240927112601_cdmb/docs/CDM/entities/test/validation-rules/rules_set_test.json",
+            "hash": "9f1193a8b245e0006bcffc3e7f612b1e"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/comorbilidad/catalogs/comorbilidad_cd.csv",
+            "filename": "20240927112601_cdmb/docs/CDM/entities/comorbilidad/catalogs/comorbilidad_cd.csv",
             "hash": "ff9d64311225af7de6da2c5875b90b48"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/comorbilidad/validation-rules/rules_set_comorbilidad.json",
-            "hash": "54820b9d46e27d2fb5671ea51dbd8ebd"
+            "filename": "20240927112601_cdmb/docs/CDM/entities/comorbilidad/validation-rules/rules_set_comorbilidad.json",
+            "hash": "fd2fbdd1a9c594b56f24a19f0d648355"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/examenes/validation-rules/rules_set_examenes.json",
-            "hash": "202993bb25760630162b47d528cca404"
+            "filename": "20240927112601_cdmb/docs/CDM/entities/examenes/validation-rules/rules_set_examenes.json",
+            "hash": "23e13316db3b07a30a0358ac2c9b8d97"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/tratamiento/catalogs/atc_tratamiento_cd.csv",
+            "filename": "20240927112601_cdmb/docs/CDM/entities/tratamiento/catalogs/atc_tratamiento_cd.csv",
             "hash": "e7cfc273f8099e537f6acf03787d4d03"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/tratamiento/validation-rules/rules_set_tratamiento.json",
+            "filename": "20240927112601_cdmb/docs/CDM/entities/tratamiento/validation-rules/rules_set_tratamiento.json",
             "hash": "555de278951a224b0cebc9d0ac1b5dd1"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/paciente/catalogs/enfermedad_cd.csv",
-            "hash": "eeb019adab1e8ec929837ed25e77e9b1"
+            "filename": "20240927112601_cdmb/docs/CDM/entities/paciente/catalogs/enfermedad_cd.csv",
+            "hash": "959f017a64b9006504156b100fd90ead"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/paciente/catalogs/ccaa_cd.csv",
+            "filename": "20240927112601_cdmb/docs/CDM/entities/paciente/catalogs/ccaa_cd.csv",
             "hash": "ef2aac5971a9915f84bb2a92f486bc41"
         },
         {
-            "filename": "20240710103454_cdmb/docs/CDM/entities/paciente/validation-rules/rules_set_paciente.json",
-            "hash": "9e45f7943a44c67cc13e198f041970af"
+            "filename": "20240927112601_cdmb/docs/CDM/entities/paciente/validation-rules/rules_set_paciente.json",
+            "hash": "35235386ccfda75fab502ce73b126a2e"
         },
         {
-            "filename": "20240710103454_cdmb/man_container_deployment.md",
+            "filename": "20240927112601_cdmb/man_container_deployment.md",
             "hash": "be3c5cbc5077fc7eff26536315bffa78"
         },
         {
-            "filename": "20240710103454_cdmb/inputs/readme.txt",
+            "filename": "20240927112601_cdmb/CITATION.cff",
+            "hash": "ecb9ac0b1cbcb5ad4cda3f7ba62e640e"
+        },
+        {
+            "filename": "20240927112601_cdmb/inputs/readme.txt",
             "hash": "52039a1eabfedece8bc5825b1e2ca83d"
         },
         {
-            "filename": "20240710103454_cdmb/inputs/data.duckdb",
-            "hash": "be8837db3e777af72ee74fb191ce8daa"
+            "filename": "20240927112601_cdmb/inputs/data.duckdb",
+            "hash": "bd0878aaa27b91a82dcf77644b6c83f1"
         },
         {
-            "filename": "20240710103454_cdmb/LICENSE.md",
+            "filename": "20240927112601_cdmb/LICENSE.md",
             "hash": "527dc6cad772ccb187d5bfe5af738204"
         },
         {
-            "filename": "20240710103454_cdmb/README.md",
+            "filename": "20240927112601_cdmb/zenodo_template.json",
+            "hash": "2bc47a8f30486583529539d37b8728c3"
+        },
+        {
+            "filename": "20240927112601_cdmb/README.md",
             "hash": "30c07b4019d0ddf8443a9a7611dc8f4f"
         },
         {
-            "filename": "20240710103454_cdmb/ro-crate-metadata.json",
-            "hash": "c2b5ef581fda929321ef885565ec52b8"
+            "filename": "20240927112601_cdmb/ro-crate-metadata.json",
+            "hash": "64ef5243e532d82dca99504010ebf0d8"
         }
     ]
 }
