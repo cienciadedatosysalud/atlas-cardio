@@ -4,13 +4,13 @@
     "uuid": "2fd29ec4-ba6a-4de0-b2c3-29f6f64c4627",
     "metadata": {
         "uuid": "2bd37d31-7b37-4cc1-849d-39e1a5edbbfc",
-        "project": "AtlasVPM Cardio: Cuidados Ambulatorios en Enfermedad Cardíaca",
+        "project": "AtlasVPM Cardio: Atención ambulatoria en la enfermedad cardíaca",
         "funder": "Proyecto financiado por la colaboración AtlasVPM mediante convenio con la Sociedad Española de Cardiología",
         "url_project": "www.atlasvpm.org",
         "work_package": "1",
         "use_case": "atlasvpm_cardio",
         "document": "Modelo común de datos",
-        "version_sem": "0.1.1",
+        "version_sem": "0.1.2",
         "authors": [
             {
                 "name": "Bernal-Delgado, Enrique (Investigador Principal)",
