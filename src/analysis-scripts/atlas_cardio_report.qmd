@@ -1,5 +1,5 @@
 ---
-title: "ATLAS DE CUIDADOS AMBULATORIOS EN ENFERMEDADES CARDÍACAS"
+title: "Informe Atlas de la atención ambulatoria en la enfermedad cardíaca"
 lang: es
 author:
   - name: Ciencia de datos para la investigación en servicios y políticas sanitarias por el grupo Atlas VPM

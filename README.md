@@ -1,6 +1,6 @@
 ![Logo of the project](https://cienciadedatosysalud.org/wp-content/uploads/logo-Data-Science-VPM.png)
 
-# ATLASVPM: Atlas de cuidados ambulatorios en la enfermedad cardiaca
+# AtlasVPM Cardio: Atención ambulatoria en la enfermedad cardíaca
 
 ## Objetivos
 Estudio de la variación intra- comunidad autónoma (CCAA) de los cuidados y tratamiento prestados en atención primaria (AP) y consultas externas hospitalarias (CEX) a los pacientes con enfermedades cardíacas a nivel de zona básica de salud (ZBS).
