@@ -557,9 +557,16 @@ eic_indicadores_test_nm <- function(i){
     df2 <- df %>% filter(paciente_id %in% df1$paciente_id) %>% filter(test_cd == 'pad' & test_resultado_nm < 90)
     df <- df %>% filter(paciente_id %in% df2$paciente_id)
   }else{
+    # df <- dbGetQuery(conn = con,
+    #                  paste0("SELECT * FROM main.test WHERE test_cd == '",df_ind_test_$ind,"' and test_resultado_nm < '",df_ind_test_$nm,"' and year(test_dt) == 2023"))
     df <- dbGetQuery(conn = con,
-                     paste0("SELECT * FROM main.test WHERE test_cd == '",df_ind_test_$ind,"' and test_resultado_nm < '",df_ind_test_$nm,"' and year(test_dt) == 2023"))
-  }
+                     paste0("SELECT * FROM main.test WHERE test_cd == '",df_ind_test_$ind,"' and year(test_dt) == 2023"))
+    df <- df %>%
+      group_by(paciente_id, test_cd) %>%
+      filter(test_dt == max(test_dt)) %>%
+      ungroup()
+    df <- df %>% filter(test_resultado_nm < df_ind_test_$nm)
+    }
   pobla <- dbGetQuery(conn = con,
                       paste0("select * from main.paciente where enfermedad_cd == 1 and edad_nm >= 18 and zbs_residencia_cd is not NULL"))
   
