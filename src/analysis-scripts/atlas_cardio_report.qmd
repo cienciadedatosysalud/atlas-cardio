@@ -52,7 +52,7 @@ options(scipen = 999)
 options(OutDec=",")
 
 s <- Sys.getenv("PIPELINE_VERSION")
-#s <- '0.0.1'
+#s <- '0.0.2'
 log_info(paste0("Versión de los análisis: ",s))
 ```
 
@@ -134,8 +134,8 @@ df_ind <- data.frame(ind = c('eic','eic_gripe','eic_eco','eic_iam','eic_ta','eic
                               'Registro de tensión arterial (TA)',
                               'TA <140/90 mmHg (en la última determinación)',
                               'Registro de colesterol LDL',
-                              'Colesterol LDL menor de 70 mg/dl', 
-                              'Colesterol LDL menor de 55 mg/dl',
+                              'Colesterol LDL menor de 70 mg/dl (en la última determinación)', 
+                              'Colesterol LDL menor de 55 mg/dl (en la última determinación)',
                               'Antagonistas de la aldosterona',
                               'Betabloqueantes',
                               'Antiagregantes',
