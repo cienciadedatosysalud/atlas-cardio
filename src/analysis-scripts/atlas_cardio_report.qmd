@@ -505,8 +505,8 @@ plot
 
 database_path <- '../../inputs/data.duckdb'
 
-df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70'),
-                      ccaa_st = c('Aragón','Canarias'))
+df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70','ES22'),
+                      ccaa_st = c('Aragón','Canarias','Navarra'))
 data <- read.csv('../../outputs/fa_ind_tablas.csv',sep='|',colClasses = c('zbs_residencia_cd' = 'character'))
 
 df_ind <- data.frame(ind = c('fa','fa_eco','fa_tsh','fa_fr','fa_chads2','fa_hasbled','fa_aco','fa_acoad',                 
@@ -874,8 +874,8 @@ plot
 
 database_path <- '../../inputs/data.duckdb'
 
-df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70'),
-                      ccaa_st = c('Aragón','Canarias'))
+df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70','ES22'),
+                      ccaa_st = c('Aragón','Canarias','Navarra'))
 data <- read.csv('../../outputs/icc_ind_tablas.csv',sep='|',colClasses = c('zbs_residencia_cd' = 'character'))
 
 df_ind <- data.frame(ind = c('icc','icc_pep_nat','icc_eco','icc_gripe','icc_ieca_ara','icc_sac_val',
