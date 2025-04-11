@@ -22,7 +22,7 @@ list_ccaa <- unique(df$ccaa_cd)
 
 df_poblacion <- dbGetQuery(conn = con, '
   select  
-	* from main.poblacion where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL
+	* from main.poblacion where grupo_edad_cd > 3 and zbs_residencia_cd is not NULL
 	')
 df_poblacion <- df_poblacion %>% group_by(ccaa_cd,zbs_residencia_cd) %>% 
   filter(ccaa_cd %in% list_ccaa) %>% 
@@ -49,7 +49,7 @@ list_ccaa <- unique(df$ccaa_cd)
 
 df_poblacion <- dbGetQuery(conn = con, '
   select  
-	* from main.poblacion where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL and sexo_cd == 1
+	* from main.poblacion where grupo_edad_cd > 3 and zbs_residencia_cd is not NULL and sexo_cd == 1
 	')
 df_poblacion <- df_poblacion %>% group_by(ccaa_cd,zbs_residencia_cd) %>% 
   filter(ccaa_cd %in% list_ccaa) %>% 
@@ -74,7 +74,7 @@ list_ccaa <- unique(df$ccaa_cd)
 
 df_poblacion <- dbGetQuery(conn = con, '
   select  
-	* from main.poblacion where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL and sexo_cd == 2
+	* from main.poblacion where grupo_edad_cd > 3 and zbs_residencia_cd is not NULL and sexo_cd == 2
 	')
 df_poblacion <- df_poblacion %>% group_by(ccaa_cd,zbs_residencia_cd) %>% 
   filter(ccaa_cd %in% list_ccaa) %>% 
@@ -99,7 +99,7 @@ list_ccaa <- unique(df$ccaa_cd)
 
 df_poblacion <- dbGetQuery(conn = con, '
   select  
-	* from main.poblacion where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL and nivel_copago_cd == 0
+	* from main.poblacion where grupo_edad_cd > 3 and zbs_residencia_cd is not NULL and nivel_copago_cd == 0
 	')
 df_poblacion <- df_poblacion %>% group_by(ccaa_cd,zbs_residencia_cd) %>% 
   filter(ccaa_cd %in% list_ccaa) %>% 
@@ -124,7 +124,7 @@ list_ccaa <- unique(df$ccaa_cd)
 
 df_poblacion <- dbGetQuery(conn = con, '
   select  
-	* from main.poblacion where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL and nivel_copago_cd == 1
+	* from main.poblacion where grupo_edad_cd > 3 and zbs_residencia_cd is not NULL and nivel_copago_cd == 1
 	')
 df_poblacion <- df_poblacion %>% group_by(ccaa_cd,zbs_residencia_cd) %>% 
   filter(ccaa_cd %in% list_ccaa) %>% 
