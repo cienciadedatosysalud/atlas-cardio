@@ -53,7 +53,8 @@ list_ccaa <- unique(df$ccaa_cd)
 
 
 df_poblacion <- dbGetQuery(conn = con, '
-  select * from main.poblacion where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL
+  select año_cd,ccaa_cd,zbs_residencia_cd,sexo_cd, grupo_edad_cd + 1 as grupo_edad_cd, nivel_copago_cd,poblacion_nm from main.poblacion 
+  where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL
 	')
 df_poblacion$sexo_cd <- as.character(df_poblacion$sexo_cd)
 df_poblacion$grupo_edad_cd[df_poblacion$grupo_edad_cd > 18] <- 18
@@ -850,8 +851,8 @@ END as grupo_edad_cd from main.paciente where enfermedad_cd == 3 and edad_nm >= 
 list_ccaa <- unique(df$ccaa_cd)
 
 df_poblacion <- dbGetQuery(conn = con, '
-  select  
-	* from main.poblacion where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL
+  select año_cd,ccaa_cd,zbs_residencia_cd,sexo_cd, grupo_edad_cd + 1 as grupo_edad_cd, nivel_copago_cd,poblacion_nm from main.poblacion 
+  where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL
 	')
 
 df_poblacion$sexo_cd <- as.character(df_poblacion$sexo_cd)
@@ -1185,8 +1186,8 @@ list_ccaa <- unique(df$ccaa_cd)
 
 
 df_poblacion <- dbGetQuery(conn = con, '
-  select  
-	* from main.poblacion where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL
+  select año_cd,ccaa_cd,zbs_residencia_cd,sexo_cd, grupo_edad_cd + 1 as grupo_edad_cd, nivel_copago_cd,poblacion_nm from main.poblacion 
+  where grupo_edad_cd > 4 and zbs_residencia_cd is not NULL
 	')
 df_poblacion$sexo_cd <- as.character(df_poblacion$sexo_cd)
 df_poblacion$grupo_edad_cd[df_poblacion$grupo_edad_cd > 18] <- 18
