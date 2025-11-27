@@ -84,8 +84,18 @@ database_path <- '../../inputs/data.duckdb'
 
 log_info('Calculando tasas FA')
 source('./aux_scripts/fa_tc_calc.R')
-df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70','ES22'),
-                      ccaa_st = c('Aragón','Canarias','Navarra'))
+df_ccaa <- data.frame(ccaa_cd = c("ES61","ES24","ES12","ES53","ES70",
+                "ES13","ES41","ES42","ES51","ES52","ES43",
+                "ES11","ES30","ES62","ES22","ES21","ES23",
+                "ES63-ES64"),
+                      ccaa_st = c("Andalucía","Aragón",
+                         "Asturias","Baleares","Canarias","Cantabria",
+                         "Castilla y León","Castilla - La Mancha",
+                         "Cataluña","Comunidad Valenciana",
+                         "Extremadura","Galicia",
+                         "Madrid","Murcia",
+                         "Navarra",
+                         "País Vasco","La Rioja","Ingesa (Ceuta-Melilla)"))
 df_ccaa_ <- df_ccaa %>% filter(ccaa_cd %in% list_ccaa)
 ```
 
@@ -126,8 +136,18 @@ rm(list=ls())
 
 database_path <- '../../inputs/data.duckdb'
 
-df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70','ES22'),
-                      ccaa_st = c('Aragón','Canarias','Navarra'))
+df_ccaa <- data.frame(ccaa_cd = c("ES61","ES24","ES12","ES53","ES70",
+                "ES13","ES41","ES42","ES51","ES52","ES43",
+                "ES11","ES30","ES62","ES22","ES21","ES23",
+                "ES63-ES64"),
+                      ccaa_st = c("Andalucía","Aragón",
+                         "Asturias","Baleares","Canarias","Cantabria",
+                         "Castilla y León","Castilla - La Mancha",
+                         "Cataluña","Comunidad Valenciana",
+                         "Extremadura","Galicia",
+                         "Madrid","Murcia",
+                         "Navarra",
+                         "País Vasco","La Rioja","Ingesa (Ceuta-Melilla)"))
 data <- read.csv('../../outputs/eic_ind_tablas.csv',sep='|',colClasses = c('zbs_residencia_cd' = 'character'))
 
 df_ind <- data.frame(ind = c('eic','eic_gripe','eic_eco','eic_iam','eic_ta','eic_ta_ctrl','eic_ldl',
@@ -511,8 +531,18 @@ plot
 
 database_path <- '../../inputs/data.duckdb'
 
-df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70','ES22'),
-                      ccaa_st = c('Aragón','Canarias','Navarra'))
+df_ccaa <- data.frame(ccaa_cd = c("ES61","ES24","ES12","ES53","ES70",
+                "ES13","ES41","ES42","ES51","ES52","ES43",
+                "ES11","ES30","ES62","ES22","ES21","ES23",
+                "ES63-ES64"),
+                      ccaa_st = c("Andalucía","Aragón",
+                         "Asturias","Baleares","Canarias","Cantabria",
+                         "Castilla y León","Castilla - La Mancha",
+                         "Cataluña","Comunidad Valenciana",
+                         "Extremadura","Galicia",
+                         "Madrid","Murcia",
+                         "Navarra",
+                         "País Vasco","La Rioja","Ingesa (Ceuta-Melilla)"))
 data <- read.csv('../../outputs/fa_ind_tablas.csv',sep='|',colClasses = c('zbs_residencia_cd' = 'character'))
 
 df_ind <- data.frame(ind = c('fa','fa_eco','fa_tsh','fa_fr','fa_chads2','fa_hasbled','fa_aco','fa_acoad',                 
@@ -880,8 +910,18 @@ plot
 
 database_path <- '../../inputs/data.duckdb'
 
-df_ccaa <- data.frame(ccaa_cd = c('ES24','ES70','ES22'),
-                      ccaa_st = c('Aragón','Canarias','Navarra'))
+df_ccaa <- data.frame(ccaa_cd = c("ES61","ES24","ES12","ES53","ES70",
+                "ES13","ES41","ES42","ES51","ES52","ES43",
+                "ES11","ES30","ES62","ES22","ES21","ES23",
+                "ES63-ES64"),
+                      ccaa_st = c("Andalucía","Aragón",
+                         "Asturias","Baleares","Canarias","Cantabria",
+                         "Castilla y León","Castilla - La Mancha",
+                         "Cataluña","Comunidad Valenciana",
+                         "Extremadura","Galicia",
+                         "Madrid","Murcia",
+                         "Navarra",
+                         "País Vasco","La Rioja","Ingesa (Ceuta-Melilla)"))
 data <- read.csv('../../outputs/icc_ind_tablas.csv',sep='|',colClasses = c('zbs_residencia_cd' = 'character'))
 
 df_ind <- data.frame(ind = c('icc','icc_pep_nat','icc_eco','icc_gripe','icc_ieca_ara','icc_sac_val',

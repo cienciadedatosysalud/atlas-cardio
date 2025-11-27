@@ -10,6 +10,4 @@ dependencies:
 - r-plotly=4.10.4
 - r-stringr=1.5.1
 - r-htmlwidgets=1.6.4
-- r-duckdb=0.10.1
-- python-duckdb==0.10.1
 
