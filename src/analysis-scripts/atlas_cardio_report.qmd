@@ -65,7 +65,7 @@ log_info(paste0("Versión de los análisis: ",s))
 database_path <- '../../inputs/data.duckdb'
 
 con = dbConnect(duckdb::duckdb(), dbdir=database_path, read_only=FALSE)
-dbExecute(con, "CREATE OR REPLACE table main.poblacion_view as (
+dbExecute(con, "CREATE OR REPLACE table main.poblacion_new_table as (
 select año_cd,ccaa_cd,zbs_residencia_cd,sexo_cd, grupo_edad_cd_ as grupo_edad_cd, nivel_copago_cd,poblacion_nm from (
 select año_cd,ccaa_cd,zbs_residencia_cd,sexo_cd,grupo_edad_cd, grupo_edad_cd + 1 as grupo_edad_cd_, nivel_copago_cd,poblacion_nm from main.poblacion))")
 dbDisconnect(con, shutdown=TRUE)
